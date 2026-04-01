@@ -30,7 +30,7 @@ export default function App() {
       tagline: 'A scientist recipe for everyday nutrition.',
       description:
         'A better-for-you chocolate-style spread made for breakfast, lunchboxes, and daily snacking. Warm, family-friendly, and easy to enjoy every day.',
-      image: '/healthy_spread.jpg',
+      image: '/healthy_spread.jpeg',
       icon: Heart,
       notes: ['No refined sugar', 'Family-friendly', 'Daily breakfast use'],
       uses: ['Spread on toast', 'Dip fruits', 'Add to oats or pancakes'],
@@ -45,7 +45,7 @@ export default function App() {
       tagline: 'No sugar. No preservatives. Just smart energy.',
       description:
         'A coffee-inspired spread designed for people who love bold flavor and versatile everyday use. Great with bread, crackers, waffles, and dessert pairings.',
-      image: '/coffee_spread.jpg',
+      image: '/coffee_spread.jpeg',
       icon: Coffee,
       notes: ['Coffee-forward', 'Smart energy', 'Snack and dessert use'],
       uses: ['Spread on toast', 'Pair with crackers', 'Use in desserts'],
@@ -60,7 +60,7 @@ export default function App() {
       tagline: 'Healthy drink powder for better mornings.',
       description:
         'A comforting cocoa drink powder for daily rituals. Enjoy it hot, cold, or blended into smoothies and oats for an easy better-morning routine.',
-      image: '/cocoa_mix.jpg',
+      image: '/cocoa_mix.jpeg',
       icon: CupSoda,
       notes: ['Drink powder', 'No refined sugar', 'Morning ritual'],
       uses: ['Hot cocoa drink', 'Blend into smoothies', 'Stir into oats'],
