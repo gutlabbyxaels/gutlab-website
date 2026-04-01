@@ -19,7 +19,7 @@ export default function GutLabByXaelsWebsite() {
       tagline: "A scientist recipe for everyday nutrition.",
       description:
         "A better-for-you chocolate-style spread made for breakfast, lunchboxes, and daily snacking. Warm, family-friendly, and easy to enjoy every day.",
-      image: "/healthy_spread.JPEG",
+      image: "/healthy_spread.jpeg",
       icon: Heart,
       notes: ["No refined sugar", "Family-friendly", "Daily breakfast use"],
       uses: ["Spread on toast", "Dip fruits", "Add to oats or pancakes"],
@@ -34,7 +34,7 @@ export default function GutLabByXaelsWebsite() {
       tagline: "No sugar. No preservatives. Just smart energy.",
       description:
         "A coffee-inspired spread designed for people who love bold flavor and versatile everyday use. Great with bread, crackers, waffles, and dessert pairings.",
-      image: "/coffee_spread.JPEG",
+      image: "/coffee_spread.jpeg",
       icon: Coffee,
       notes: ["Coffee-forward", "Smart energy", "Snack and dessert use"],
       uses: ["Spread on toast", "Pair with crackers", "Use in desserts"],
@@ -49,7 +49,7 @@ export default function GutLabByXaelsWebsite() {
       tagline: "Healthy drink powder for better mornings.",
       description:
         "A comforting cocoa drink powder for daily rituals. Enjoy it hot, cold, or blended into smoothies and oats for an easy better-morning routine.",
-      image: "/cocoa_mix.JPEG",
+      image: "/cocoa_mix.jpeg",
       icon: CupSoda,
       notes: ["Drink powder", "No refined sugar", "Morning ritual"],
       uses: ["Hot cocoa drink", "Blend into smoothies", "Stir into oats"],
@@ -241,21 +241,21 @@ export default function GutLabByXaelsWebsite() {
                 >
                   <div className="sm:row-span-2 overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.08)] backdrop-blur">
                     <img
-                      src="/healthy_spread.JPEG"
+                      src="/healthy_spread.jpeg"
                       alt="Healthy Spread"
                       className="h-full w-full rounded-[1.4rem] object-cover"
                     />
                   </div>
                   <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.08)] backdrop-blur">
                     <img
-                      src="/coffee_spread.JPEG"
+                      src="/coffee_spread.jpeg"
                       alt="Coffee Reimagined"
                       className="h-full w-full rounded-[1.4rem] object-cover"
                     />
                   </div>
                   <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.08)] backdrop-blur">
                     <img
-                      src="/cocoa_mix.JPEG"
+                      src="/cocoa_mix.jpeg"
                       alt="Cocoa Nut Mix"
                       className="h-full w-full rounded-[1.4rem] object-cover"
                     />
