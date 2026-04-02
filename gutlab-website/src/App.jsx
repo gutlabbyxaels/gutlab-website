@@ -1,9 +1,12 @@
-export default function App() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>🔥 WORKING 🔥</h1>
-      <p>If you see this, everything is fixed.</p>
-      <img src="/logo.png" style={{ width: 120 }} />
-    </div>
-  );
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+const rootEl = document.getElementById("root");
+
+if (rootEl) {
+  ReactDOM.createRoot(rootEl).render(<App />);
+} else {
+  document.body.innerHTML =
+    "<div style='padding:40px;font-family:Arial,sans-serif'>Root div not found</div>";
 }
