@@ -1,5 +1,5 @@
 Add these files into this folder before deployment:
 - logo.png
-- healthy_spread.jpg
-- coffee_spread.jpg
-- cocoa_mix.jpg
+- healthy_spread.jpeg
+- coffee_spread.jpeg
+- cocoa_mix.jpeg
