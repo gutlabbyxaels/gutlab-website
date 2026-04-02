@@ -1,9 +1,9 @@
 export default function App() {
   return (
-    <div style={{ padding: 40, fontFamily: "Arial, sans-serif" }}>
-      <h1>TEST PAGE WORKING</h1>
-      <p>If you can see this, you edited the correct file.</p>
-      <img src="/logo.png" alt="Logo" style={{ width: 120 }} />
+    <div style={{ padding: 40 }}>
+      <h1>🔥 WORKING 🔥</h1>
+      <p>If you see this, everything is fixed.</p>
+      <img src="/logo.png" style={{ width: 120 }} />
     </div>
   );
 }
