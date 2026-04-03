@@ -995,8 +995,8 @@ export default function App() {
                   <div className="eyebrow">Signature Collection</div>
                   <h1>A better everyday alternative to ultra-processed food.</h1>
                   <p className="hero-copy">
-                    Gut Lab by Xaels brings scientific understanding of the gut–brain axis into everyday food 
-                    creating simple, practical alternatives to ultra-processed choices for daily life.
+                    Built on the science of the gut–brain axis and designed for real family routines
+                    Simple foods that fit into breakfast, snacks, and daily life — without compromising on what matters
                   </p>
 
                   <div className="hero-buttons">
@@ -1015,7 +1015,7 @@ export default function App() {
 
                   <div className="hero-badges">
                     <span className="badge">Made for everyday family use</span>
-                    <span className="badge">Ancient millets, modern nutrition</span>
+                    <span className="badge">Thoughtfully crafted ingredients</span>
                     <span className="badge">Naturally sweetened with dates</span>
                     <span className="badge">No preservatives. No chemicals.</span>
                   </div>
