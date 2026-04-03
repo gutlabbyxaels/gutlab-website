@@ -573,13 +573,13 @@ export default function App() {
           box-shadow: 0 18px 34px rgba(0,0,0,0.09);
         }
 
-        .product-image {
+       .product-image {
           width: 100%;
-          height: 380px;
+          aspect-ratio: 1 / 1;
           object-fit: contain;
           display: block;
           background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
-          padding: 20px;
+          padding: 16px;
         }
 
         .product-body { padding: 22px; }
@@ -919,7 +919,11 @@ export default function App() {
         }
 
         @media (max-width: 700px) {
-          .container { padding: 0 16px; }
+          .product-image {
+          aspect-ratio: 1 / 1;
+          padding: 12px;
+          }
+        }
 
           .header-inner {
             flex-direction: column;
@@ -952,9 +956,9 @@ export default function App() {
           }
 
           .hero-big,
-          .hero-small {
-            height: 220px;
-            grid-row: auto;
+            .hero-small {
+            object-fit: contain;
+            padding: 12px;
           }
 
           .action-row {
