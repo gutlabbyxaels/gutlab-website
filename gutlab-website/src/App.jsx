@@ -995,7 +995,7 @@ export default function App() {
                   <div className="eyebrow">Signature Collection</div>
                   <h1>A better everyday alternative to ultra-processed food.</h1>
                   <p className="hero-copy">
-                    Built on the science of the gut–brain axis and designed for real family routines
+                    Built on the science of the gut–brain axis and designed for family morning routines.
                     Simple foods that fit into breakfast, snacks, and daily life — without compromising on what matters
                   </p>
 
