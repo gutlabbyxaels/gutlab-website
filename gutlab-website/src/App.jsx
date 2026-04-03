@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+
+const ORDER_CALCULATOR_URL = "https://gutlab-order.netlify.app/";
+const WHATSAPP_ORDER_URL =
+  "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20place%20an%20order.";
+const INSTAGRAM_URL =
+  "https://www.instagram.com/xaelsbakes?igsh=MTBicDlwZ3piMXdyNg==";
+const TIKTOK_URL = "https://vt.tiktok.com/ZSH2SPbE4/?page=TikTokShop";
 
 const products = [
   {
@@ -96,13 +103,43 @@ const reasons = [
   },
 ];
 
-const waysToUse = [
-  "Spread on toast before work or school",
-  "Pair with crackers or fruit for a quick snack",
-  "Add to pancakes, waffles, or oats",
-  "Enjoy Cocoa Nut Mix as a warm evening drink",
-  "Gift it as a cheerful small-batch bundle",
-  "Keep it as a pantry staple for repeat purchases",
+const dailyCards = [
+  {
+    image: "/use_toast.jpg",
+    emoji: "🍞",
+    title: "Morning toast before work or school",
+    text: "An easy breakfast habit that fits busy mornings and school routines.",
+  },
+  {
+    image: "/use_snack.jpg",
+    emoji: "🍎",
+    title: "Quick snack with crackers or fruit",
+    text: "A simple afternoon snack idea that feels light, fun, and shareable.",
+  },
+  {
+    image: "/use_pancake.jpg",
+    emoji: "🥞",
+    title: "Add to pancakes, waffles, or oats",
+    text: "A cheerful upgrade for breakfast bowls, weekend brunches, or evening treats.",
+  },
+  {
+    image: "/use_cocoa.jpg",
+    emoji: "☕",
+    title: "Enjoy Cocoa Nut Mix as a warm evening drink",
+    text: "A cozy premium cocoa ritual for winding down at the end of the day.",
+  },
+  {
+    image: "/use_gift.jpg",
+    emoji: "🎁",
+    title: "Gift it as a cheerful small-batch bundle",
+    text: "A friendly, thoughtful bundle that feels personal and easy to share.",
+  },
+  {
+    image: "/use_pantry.jpg",
+    emoji: "🧺",
+    title: "Keep it as a pantry staple for repeat purchases",
+    text: "Made to be the kind of product you naturally keep stocked at home.",
+  },
 ];
 
 const floatingItems = [
@@ -113,6 +150,34 @@ const floatingItems = [
   { top: "1380px", left: "6%", icon: "🍫", delay: "1s" },
   { top: "1880px", right: "8%", icon: "☕", delay: "2.5s" },
 ];
+
+function DailyUseCard({ card }) {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  return (
+    <div className="daily-story-card">
+      {!imgFailed ? (
+        <img
+          src={card.image}
+          alt={card.title}
+          className="daily-story-image"
+          onError={() => setImgFailed(true)}
+        />
+      ) : (
+        <div className="daily-story-fallback">
+          <div className="daily-story-fallback-emoji">{card.emoji}</div>
+          <div className="daily-story-fallback-cloud">✨</div>
+        </div>
+      )}
+
+      <div className="daily-story-content">
+        <div className="daily-story-chip">{card.emoji}</div>
+        <h3>{card.title}</h3>
+        <p>{card.text}</p>
+      </div>
+    </div>
+  );
+}
 
 const styles = `
   * { box-sizing: border-box; }
@@ -187,6 +252,7 @@ const styles = `
     50% { transform: translateY(-14px); }
     100% { transform: translateY(0px); }
   }
+
   .header {
     position: sticky;
     top: 0;
@@ -243,6 +309,7 @@ const styles = `
     font-weight: 700;
     font-size: 15px;
   }
+
   .hero {
     padding: 44px 0 30px;
   }
@@ -372,7 +439,7 @@ const styles = `
     gap: 16px;
     margin-bottom: 16px;
   }
-  .mini-card, .info-card, .use-card, .product-card, .bundle-card {
+  .mini-card, .info-card, .product-card, .bundle-card, .daily-story-card {
     background: rgba(255,255,255,0.82);
     border: 1px solid #efe2d2;
     box-shadow: 0 10px 24px rgba(0,0,0,0.06);
@@ -575,6 +642,8 @@ const styles = `
   .bundle-wrap h2 {
     margin: 12px 0 10px 0;
     font-size: 42px;
+    color: #163a14;
+    text-shadow: none;
   }
   .bundle-wrap p.top-copy {
     margin: 0 0 22px 0;
@@ -635,29 +704,93 @@ const styles = `
     gap: 24px;
     align-items: start;
   }
-  .use-list {
+  .daily-story-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 18px;
   }
-  .use-card {
-    border-radius: 24px;
-    padding: 18px;
+  .daily-story-card {
+    border-radius: 28px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .use-icon {
-    width: 36px;
-    height: 36px;
+  .daily-story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.09);
+  }
+  .daily-story-image,
+  .daily-story-fallback {
+    width: 100%;
+    height: 185px;
+    display: block;
+  }
+  .daily-story-image {
+    object-fit: cover;
+    background: #f4efe8;
+  }
+  .daily-story-fallback {
+    position: relative;
+    background: linear-gradient(135deg, #fff0df 0%, #ffe0b9 100%);
+    overflow: hidden;
+  }
+  .daily-story-fallback::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -20px;
+    top: -40px;
+    background: rgba(255,255,255,0.24);
+    border-radius: 999px;
+  }
+  .daily-story-fallback::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -20px;
+    bottom: -20px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 999px;
+  }
+  .daily-story-fallback-emoji {
+    position: absolute;
+    left: 28px;
+    bottom: 24px;
+    font-size: 56px;
+    filter: drop-shadow(0 10px 16px rgba(0,0,0,0.12));
+  }
+  .daily-story-fallback-cloud {
+    position: absolute;
+    right: 28px;
+    top: 22px;
+    font-size: 30px;
+    opacity: 0.85;
+  }
+  .daily-story-content {
+    padding: 20px;
+  }
+  .daily-story-chip {
+    width: 38px;
+    height: 38px;
     border-radius: 999px;
     background: #fff0d8;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 18px;
   }
-  .use-card div:last-child {
-    font-size: 15px;
-    color: #444;
+  .daily-story-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 19px;
+    line-height: 1.45;
+    color: #21451f;
+  }
+  .daily-story-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
     line-height: 1.65;
   }
 
@@ -761,7 +894,7 @@ const styles = `
     .mini-grid,
     .products-grid,
     .bundle-grid,
-    .use-list,
+    .daily-story-list,
     .benefit-grid {
       grid-template-columns: 1fr;
     }
@@ -837,7 +970,9 @@ export default function App() {
                 </p>
 
                 <div className="hero-buttons">
-                  <a href="#products" className="btn-primary">Shop products</a>
+                  <a href={ORDER_CALCULATOR_URL} target="_blank" rel="noreferrer" className="btn-primary">
+                    Order with Calculator
+                  </a>
                   <a href="#bundles" className="btn-light">View combo offers</a>
                 </div>
 
@@ -920,14 +1055,16 @@ export default function App() {
                     </div>
 
                     <div className="product-actions">
-                      <a href={p.order} className="btn-gold">Order on WhatsApp</a>
                       <a
-                        href="https://vt.tiktok.com/ZSH2SPbE4/?page=TikTokShop"
+                        href={ORDER_CALCULATOR_URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn-light"
+                        className="btn-gold"
                       >
-                        View on TikTok
+                        Check Total & Order
+                      </a>
+                      <a href={p.order} className="btn-light">
+                        WhatsApp Order
                       </a>
                     </div>
                   </div>
@@ -973,12 +1110,9 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="use-list">
-                {waysToUse.map((item) => (
-                  <div key={item} className="use-card">
-                    <div className="use-icon">🛍️</div>
-                    <div>{item}</div>
-                  </div>
+              <div className="daily-story-list">
+                {dailyCards.map((card) => (
+                  <DailyUseCard key={card.title} card={card} />
                 ))}
               </div>
             </div>
@@ -1007,20 +1141,29 @@ export default function App() {
                   <div className="section-eyebrow">Ready to order?</div>
                   <h2>Message us directly and start ordering from this page</h2>
                   <p>
-                    Use WhatsApp for direct orders, Instagram for discovery, and TikTok Shop for social commerce.
+                    Use the order calculator for bundle totals, WhatsApp for direct orders, and TikTok Shop for social commerce.
                   </p>
                 </div>
 
                 <div className="contact-actions">
                   <a
-                    href="https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20place%20an%20order."
+                    href={ORDER_CALCULATOR_URL}
+                    target="_blank"
+                    rel="noreferrer"
                     className="btn-primary"
+                    style={{ textAlign: "center" }}
+                  >
+                    Order with Calculator
+                  </a>
+                  <a
+                    href={WHATSAPP_ORDER_URL}
+                    className="btn-light"
                     style={{ textAlign: "center" }}
                   >
                     Order via WhatsApp
                   </a>
                   <a
-                    href="https://www.instagram.com/xaelsbakes?igsh=MTBicDlwZ3piMXdyNg=="
+                    href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-light"
@@ -1029,7 +1172,7 @@ export default function App() {
                     Visit Instagram
                   </a>
                   <a
-                    href="https://vt.tiktok.com/ZSH2SPbE4/?page=TikTokShop"
+                    href={TIKTOK_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-light"
