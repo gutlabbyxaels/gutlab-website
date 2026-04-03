@@ -5,7 +5,7 @@ const WHATSAPP_ORDER_URL =
   "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20place%20an%20order.";
 const INSTAGRAM_URL =
   "https://www.instagram.com/xaelsbakes?igsh=MTBicDlwZ3piMXdyNg==";
-const TIKTOK_URL = "https://vt.tiktok.com/ZSH2SPbE4/?page=TikTokShop";
+const TIKTOK_PROFILE_URL = "https://www.tiktok.com/@xaelsbakes";
 
 const products = [
   {
@@ -14,11 +14,19 @@ const products = [
     image: "/healthy_spread.jpeg",
     tagline: "A scientist recipe for everyday nutrition.",
     description:
-      "A better-for-you everyday spread designed for toast, breakfast bowls, pancakes, and snack time. Warm, cheerful, and easy to enjoy every day.",
+      "A better-for-you everyday spread designed for toast, breakfast bowls, pancakes, and snack time.",
     story:
       "Built to feel familiar and comforting, while fitting naturally into breakfast and family routines.",
-    tags: ["No refined sugar", "Family-friendly", "Daily breakfast use"],
+    tags: ["Family-friendly", "Everyday use", "Comfort food"],
     ways: ["Spread on toast", "Add to oats", "Use with pancakes"],
+    ingredients: [
+      "Butter",
+      "Avocado oil",
+      "Ragi (millet)",
+      "Cocoa",
+      "Date syrup",
+      "Honey",
+    ],
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Healthy%20Spread.",
   },
@@ -28,11 +36,19 @@ const products = [
     image: "/coffee_spread.jpeg",
     tagline: "No sugar. No preservatives. Just smart energy.",
     description:
-      "A rich coffee-inspired spread made for bread, crackers, waffles, and dessert moments. Bold, modern, and easy to fit into snack routines.",
+      "A rich coffee-inspired spread made for bread, crackers, waffles, and dessert moments.",
     story:
       "Made for people who love coffee flavor, but want it in a more playful, versatile everyday format.",
-    tags: ["Coffee-forward", "Smart energy", "Snack & dessert use"],
+    tags: ["Coffee-forward", "Smart energy", "Snack use"],
     ways: ["Spread on toast", "Pair with crackers", "Use in desserts"],
+    ingredients: [
+      "Butter",
+      "Avocado oil",
+      "Ragi (millet)",
+      "Espresso",
+      "Date syrup",
+      "Honey",
+    ],
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Coffee%20Reimagined.",
   },
@@ -45,10 +61,62 @@ const products = [
       "A rich cocoa blend for warm drinks, smoothies, oats, and daily comfort moments. Designed as a premium ritual, not just a drink powder.",
     story:
       "Positioned as the richer, more premium part of the range — something you keep coming back to morning or evening.",
-    tags: ["Premium blend", "No refined sugar", "Morning ritual"],
+    tags: ["Premium blend", "Daily ritual", "Comforting"],
     ways: ["Hot cocoa drink", "Blend into smoothies", "Stir into oats"],
+    ingredients: [
+      "Barley",
+      "Oats",
+      "Almonds",
+      "Cashews",
+      "Milk powder",
+      "Cocoa",
+    ],
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Cocoa%20Nut%20Mix.",
+  },
+  {
+    name: "Fudge Brownie (500g)",
+    price: "SGD 50",
+    image: "/brownie_500.jpg",
+    tagline: "Rich, fudgy, small-batch brownie.",
+    description:
+      "A decadent brownie block that feels giftable, indulgent, and perfect for sharing.",
+    story:
+      "A smaller-format brownie for gifting, celebrations, or a premium treat at home.",
+    tags: ["Giftable", "Small-batch", "Indulgent"],
+    ways: ["Serve warm", "Share with family", "Gift to friends"],
+    ingredients: [
+      "Dark chocolate",
+      "Butter",
+      "Eggs",
+      "Cocoa",
+      "Flour",
+      "Natural sweetener",
+    ],
+    order:
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20500g%20Fudge%20Brownie.",
+  },
+  {
+    name: "Fudge Brownie (1100g)",
+    price: "SGD 110",
+    image: "/brownie_1100.jpg",
+    tagline: "Large indulgent brownie slab.",
+    description:
+      "A celebration-sized brownie for gatherings, family sharing, gifting, and serious chocolate cravings.",
+    story:
+      "Created for bigger moments — generous, rich, and made to feel special.",
+    tags: ["Celebration size", "Premium gift", "Shareable"],
+    ways: ["Serve at gatherings", "Gift for occasions", "Share at home"],
+    ingredients: [
+      "Dark chocolate",
+      "Butter",
+      "Eggs",
+      "Cocoa",
+      "Flour",
+      "Natural sweetener",
+    ],
+    order:
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%201100g%20Fudge%20Brownie.",
   },
 ];
 
@@ -128,13 +196,13 @@ const dailyCards = [
   {
     image: "/use_gift.jpg",
     emoji: "🎁",
-    title: "Gift it as a cheerful small-batch bundle",
-    text: "A friendly, thoughtful bundle that feels personal and easy to share.",
+    title: "Perfect as a thoughtful gift bundle",
+    text: "A friendly, giftable format that feels personal and easy to share.",
   },
   {
     image: "/use_pantry.jpg",
     emoji: "🧺",
-    title: "Keep it as a pantry staple for repeat purchases",
+    title: "Keep as a pantry staple for daily use",
     text: "Made to be the kind of product you naturally keep stocked at home.",
   },
 ];
@@ -192,7 +260,7 @@ const styles = `
     overflow-x: hidden;
   }
   .container {
-    max-width: 1180px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -399,18 +467,19 @@ const styles = `
   }
   .hero-badges {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 22px;
+    gap: 10px;
+    margin-top: 20px;
   }
-  .hero-badges span {
-    background: rgba(255,255,255,0.8);
-    border: 1px solid #efdfc7;
-    padding: 10px 14px;
+  .badge {
+    padding: 8px 14px;
+    background: #f1efe9;
     border-radius: 999px;
     font-size: 14px;
-    color: #555;
+    color: #333;
+    border: 1px solid #e5dccf;
   }
+
   .hero-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -485,7 +554,7 @@ const styles = `
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 22px;
     margin-top: 24px;
   }
@@ -500,10 +569,11 @@ const styles = `
   }
   .product-card img {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
+    height: 380px;
+    object-fit: contain;
     display: block;
-    background: #f4efe8;
+    background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
+    padding: 20px;
   }
   .product-body {
     padding: 22px;
@@ -591,6 +661,25 @@ const styles = `
     color: #666;
     line-height: 1.7;
     font-size: 14px;
+  }
+  details.ingredients {
+    margin-top: 14px;
+    border-radius: 14px;
+    background: #faf6ef;
+    border: 1px solid #eee0c9;
+    padding: 12px 14px;
+  }
+  details.ingredients summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #21451f;
+  }
+  details.ingredients ul {
+    margin: 10px 0 0 0;
+    padding-left: 18px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
   }
   .product-actions {
     display: flex;
@@ -864,44 +953,48 @@ const styles = `
     border: 1px solid #f0dfc8;
     box-shadow: 0 18px 40px rgba(197,138,47,0.12);
   }
-  .contact-grid {
+  .contact-layout {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: center;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 32px;
+    align-items: start;
+    margin-top: 14px;
   }
-  .contact-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    min-width: 250px;
-  }
-  .contact-wrap h2 {
+  .contact-copy h2 {
     margin: 10px 0;
     font-size: 42px;
     color: #21451f;
   }
-  .contact-wrap p {
+  .contact-copy p {
     margin: 0;
     color: #666;
     line-height: 1.75;
     max-width: 760px;
   }
-  .contact-note {
-    margin-top: 14px !important;
+  .contact-copy .contact-note {
+    margin-top: 18px;
     font-size: 14px;
-    color: #7a6c58 !important;
+    color: #7a6c58;
+  }
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .contact-actions a {
+    width: 100%;
+    text-align: center;
   }
 
   @media (max-width: 1024px) {
     .hero-box,
-    .contact-grid,
     .story-layout,
-    .about-layout {
+    .about-layout,
+    .contact-layout {
       grid-template-columns: 1fr;
     }
     .mini-grid,
-    .products-grid,
     .bundle-grid,
     .benefit-grid,
     .daily-story-list {
@@ -930,7 +1023,7 @@ const styles = `
     .hero h1,
     .section h2,
     .bundle-wrap h2,
-    .contact-wrap h2 {
+    .contact-copy h2 {
       font-size: 34px;
     }
     .hero-images,
@@ -952,6 +1045,70 @@ const styles = `
     }
   }
 `;
+
+function ProductCard({ product }) {
+  return (
+    <div className="product-card">
+      <img src={product.image} alt={product.name} />
+      <div className="product-body">
+        <div className="product-top">
+          <div>
+            <h3>{product.name}</h3>
+          </div>
+          <div className="price-pill">{product.price}</div>
+        </div>
+
+        <div className="product-tagline">{product.tagline}</div>
+        <div className="product-description">{product.description}</div>
+
+        <div className="story-box">
+          <strong>Why it matters</strong>
+          <span>{product.story}</span>
+        </div>
+
+        <div className="tag-row">
+          {product.tags.map((tag) => (
+            <span key={tag} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="ways-box">
+          <strong>Simple ways to enjoy</strong>
+          <ul>
+            {product.ways.map((way) => (
+              <li key={way}>{way}</li>
+            ))}
+          </ul>
+        </div>
+
+        <details className="ingredients">
+          <summary>View Ingredients</summary>
+          <ul>
+            {product.ingredients.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </details>
+
+        <div className="product-actions">
+          <a
+            href={ORDER_CALCULATOR_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-gold"
+          >
+            Check Total & Order
+          </a>
+          <a href={product.order} className="btn-light">
+            WhatsApp Order
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   return (
@@ -1019,14 +1176,16 @@ export default function App() {
                   <a href={ORDER_CALCULATOR_URL} target="_blank" rel="noreferrer" className="btn-primary">
                     Order with Calculator
                   </a>
-                  <a href="#bundles" className="btn-light">View combo offers</a>
+                  <a href="#bundles" className="btn-light">
+                    View combo offers
+                  </a>
                 </div>
 
                 <div className="hero-badges">
-                  <span>No refined sugar</span>
-                  <span>Gift-worthy</span>
-                  <span>Playful brand feel</span>
-                  <span>Repeat-buy friendly</span>
+                  <span className="badge">Made for everyday family use</span>
+                  <span className="badge">Ancient millets, modern nutrition</span>
+                  <span className="badge">Naturally sweetened with dates</span>
+                  <span className="badge">No preservatives. No chemicals.</span>
                 </div>
               </div>
 
@@ -1064,56 +1223,8 @@ export default function App() {
             </p>
 
             <div className="products-grid">
-              {products.map((p) => (
-                <div key={p.name} className="product-card">
-                  <img src={p.image} alt={p.name} />
-
-                  <div className="product-body">
-                    <div className="product-top">
-                      <div>
-                        <h3>{p.name}</h3>
-                      </div>
-                      <div className="price-pill">{p.price}</div>
-                    </div>
-
-                    <div className="product-tagline">{p.tagline}</div>
-                    <div className="product-description">{p.description}</div>
-
-                    <div className="story-box">
-                      <strong>Why it matters</strong>
-                      <span>{p.story}</span>
-                    </div>
-
-                    <div className="tag-row">
-                      {p.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-
-                    <div className="ways-box">
-                      <strong>Simple ways to enjoy</strong>
-                      <ul>
-                        {p.ways.map((way) => (
-                          <li key={way}>{way}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="product-actions">
-                      <a
-                        href={ORDER_CALCULATOR_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn-gold"
-                      >
-                        Check Total & Order
-                      </a>
-                      <a href={p.order} className="btn-light">
-                        WhatsApp Order
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              {products.map((product) => (
+                <ProductCard key={product.name} product={product} />
               ))}
             </div>
           </div>
@@ -1129,14 +1240,16 @@ export default function App() {
               </p>
 
               <div className="bundle-grid">
-                {bundles.map((b) => (
-                  <div key={b.title} className="bundle-card">
-                    <div className="bundle-badge">{b.badge}</div>
-                    <h3>{b.title}</h3>
-                    <div className="bundle-price">{b.price}</div>
-                    <div className="bundle-desc">{b.desc}</div>
-                    <div className="bundle-note">{b.note}</div>
-                    <a href={b.order} className="btn-white">Order this combo</a>
+                {bundles.map((bundle) => (
+                  <div key={bundle.title} className="bundle-card">
+                    <div className="bundle-badge">{bundle.badge}</div>
+                    <h3>{bundle.title}</h3>
+                    <div className="bundle-price">{bundle.price}</div>
+                    <div className="bundle-desc">{bundle.desc}</div>
+                    <div className="bundle-note">{bundle.note}</div>
+                    <a href={bundle.order} className="btn-white">
+                      Order this combo
+                    </a>
                   </div>
                 ))}
               </div>
@@ -1148,9 +1261,9 @@ export default function App() {
           <div className="container">
             <div className="daily-header">
               <div className="section-eyebrow">Daily Use</div>
-              <h2>Simple ways to enjoy these products every day</h2>
+              <h2>Simple ways to enjoy every day</h2>
               <p className="section-copy">
-                These products are designed to fit easily into breakfast, snack time, and everyday routines.
+                Designed to fit into real routines — breakfast, snacks, and daily comfort moments.
               </p>
             </div>
 
@@ -1178,20 +1291,20 @@ export default function App() {
                 </p>
                 <p>
                   Instead of making food that feels complicated or overly clinical, we focus on
-                  products that people actually want to keep using — spreads, drinks, and
+                  products that people actually want to keep using — spreads, drinks, brownies, and
                   bundle-friendly items that feel cheerful, practical, and easy to enjoy.
                 </p>
               </div>
 
               <div className="story-panel">
-                <h3>What we want families to feel</h3>
+                <h3>What makes the range special</h3>
                 <p>
-                  We want our products to feel easy, warm, and approachable — the kind of food you
-                  naturally reach for, gift to someone, or keep stocked at home.
+                  We use ancient millets, naturally sweeten where possible with dates, and build
+                  products around warmth, familiarity, and repeat use.
                 </p>
                 <p>
-                  Our goal is not just to make something interesting once. It is to create products
-                  that genuinely belong in everyday family life.
+                  Our approach is simple: make food that families can trust, children can enjoy, and
+                  parents can feel good about buying again.
                 </p>
               </div>
             </div>
@@ -1234,11 +1347,11 @@ export default function App() {
         <section className="section">
           <div className="container">
             <div className="benefit-grid">
-              {reasons.map((r) => (
-                <div key={r.title} className="info-card">
-                  <div className="info-emoji">{r.emoji}</div>
-                  <h3>{r.title}</h3>
-                  <p>{r.text}</p>
+              {reasons.map((reason) => (
+                <div key={reason.title} className="info-card">
+                  <div className="info-emoji">{reason.emoji}</div>
+                  <h3>{reason.title}</h3>
+                  <p>{reason.text}</p>
                 </div>
               ))}
             </div>
@@ -1249,17 +1362,19 @@ export default function App() {
           <div className="container">
             <div className="contact-wrap">
               <div className="section-eyebrow">Contact</div>
-              <h2>Let’s help you choose the right order</h2>
-              <p>
-                Whether you want to try a single product, build a bundle, or ask a question before
-                ordering, we’d love to hear from you.
-              </p>
-              <p className="contact-note">
-                For custom bundle requests or bulk gifting orders, message us directly on WhatsApp.
-              </p>
 
-              <div className="contact-grid" style={{ marginTop: 24 }}>
-                <div></div>
+              <div className="contact-layout">
+                <div className="contact-copy">
+                  <h2>Let’s help you choose the right order</h2>
+                  <p>
+                    Whether you want to try a single product, build a bundle, or ask a question
+                    before ordering, we’d love to hear from you.
+                  </p>
+                  <p className="contact-note">
+                    For custom bundle requests or bulk gifting orders, message us directly on
+                    WhatsApp.
+                  </p>
+                </div>
 
                 <div className="contact-actions">
                   <a
@@ -1267,34 +1382,30 @@ export default function App() {
                     target="_blank"
                     rel="noreferrer"
                     className="btn-primary"
-                    style={{ textAlign: "center" }}
                   >
                     Order with Calculator
                   </a>
-                  <a
-                    href={WHATSAPP_ORDER_URL}
-                    className="btn-light"
-                    style={{ textAlign: "center" }}
-                  >
+
+                  <a href={WHATSAPP_ORDER_URL} className="btn-light">
                     Order via WhatsApp
                   </a>
+
                   <a
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-light"
-                    style={{ textAlign: "center" }}
                   >
                     Visit Instagram
                   </a>
+
                   <a
-                    href={TIKTOK_URL}
+                    href={TIKTOK_PROFILE_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="btn-light"
-                    style={{ textAlign: "center" }}
                   >
-                    Visit TikTok Shop
+                    Visit TikTok
                   </a>
                 </div>
               </div>
