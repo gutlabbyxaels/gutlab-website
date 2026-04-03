@@ -995,8 +995,8 @@ export default function App() {
                   <div className="eyebrow">Signature Collection</div>
                   <h1>A better everyday alternative to ultra-processed food.</h1>
                   <p className="hero-copy">
-                    Gut Lab by Xaels brings together cheerful branding, smart ingredient positioning,
-                    and easy daily use — from breakfast toast to warm cocoa rituals.
+                    Gut Lab by Xaels brings scientific understanding of the gut–brain axis into everyday food 
+                    creating simple, practical alternatives to ultra-processed choices for daily life.
                   </p>
 
                   <div className="hero-buttons">
