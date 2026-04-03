@@ -150,57 +150,6 @@ const bundles = [
   },
 ];
 
-const reasons = [
-  {
-    title: "Made for everyday use",
-    text: "These products fit naturally into breakfast, snack time, lunchboxes, and small daily rituals.",
-    icon: "☀️",
-  },
-  {
-    title: "Comfort food, upgraded",
-    text: "Familiar flavors like chocolate, coffee, and cocoa reworked into more thoughtful everyday choices.",
-    icon: "🍫",
-  },
-  {
-    title: "Easy to gift and repeat",
-    text: "The range works for self-use, family purchase, gifting, and bundle-based repeat buying.",
-    icon: "🎁",
-  },
-];
-
-const dailyCards = [
-  {
-    image: "/use_toast.jpg",
-    title: "Morning toast before work or school",
-    text: "An easy breakfast habit that fits busy mornings and school routines.",
-  },
-  {
-    image: "/use_snack.jpg",
-    title: "Quick snack with crackers or fruit",
-    text: "A simple afternoon snack idea that feels light, fun, and shareable.",
-  },
-  {
-    image: "/use_pancake.jpg",
-    title: "Add to pancakes, waffles, or oats",
-    text: "A cheerful upgrade for breakfast bowls, weekend brunches, or evening treats.",
-  },
-  {
-    image: "/use_cocoa.jpg",
-    title: "Enjoy Cocoa Nut Mix as a warm evening drink",
-    text: "A cozy premium cocoa ritual for winding down at the end of the day.",
-  },
-  {
-    image: "/use_gift.jpg",
-    title: "Perfect as a thoughtful gift bundle",
-    text: "A friendly, giftable format that feels personal and easy to share.",
-  },
-  {
-    image: "/use_pantry.jpg",
-    title: "Keep as a pantry staple for daily use",
-    text: "Made to be the kind of product you naturally keep stocked at home.",
-  },
-];
-
 function ProductCard({ product }) {
   return (
     <div className="card product-card">
@@ -258,18 +207,6 @@ function ProductCard({ product }) {
             WhatsApp Order
           </a>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function DailyUseCard({ item }) {
-  return (
-    <div className="card daily-card">
-      <img src={item.image} alt={item.title} className="daily-image" />
-      <div className="daily-body">
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
       </div>
     </div>
   );
@@ -370,10 +307,7 @@ export default function App() {
         }
 
         .hero-box {
-          display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 28px;
-          align-items: center;
+          display: block;
           border-radius: 34px;
           padding: 40px;
           background: linear-gradient(135deg, #fff9f0 0%, #fff2e0 45%, #ffe5c4 100%);
@@ -450,54 +384,6 @@ export default function App() {
           color: #21451f;
         }
 
-        .hero-badges {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-top: 20px;
-        }
-
-        .badge {
-          padding: 8px 14px;
-          background: #f1efe9;
-          border-radius: 999px;
-          font-size: 14px;
-          color: #333;
-          border: 1px solid #e5dccf;
-        }
-
-        .hero-images {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 14px;
-        }
-
-        .hero-big,
-        .hero-small {
-          width: 100%;
-          border-radius: 26px;
-          background: #fff;
-          box-shadow: 0 14px 26px rgba(0,0,0,0.08);
-          display: block;
-        }
-
-        .hero-big {
-          height: 430px;
-          grid-row: span 2;
-          object-fit: contain;
-          object-position: center;
-          padding: 8px;
-          background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
-        }
-
-        .hero-small {
-          height: 208px;
-          object-fit: contain;
-          object-position: center;
-          padding: 6px;
-          background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
-        }
-
         .section {
           padding: 36px 0;
         }
@@ -525,36 +411,11 @@ export default function App() {
           margin: 0;
         }
 
-        .mini-grid {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 16px;
-          margin-bottom: 16px;
-        }
-
         .card {
           background: rgba(255,255,255,0.9);
           border: 1px solid #efe2d2;
           box-shadow: 0 10px 24px rgba(0,0,0,0.06);
           backdrop-filter: blur(8px);
-        }
-
-        .mini-card {
-          border-radius: 24px;
-          padding: 20px;
-        }
-
-        .mini-card h4 {
-          margin: 0 0 8px 0;
-          color: #21451f;
-          font-size: 18px;
-        }
-
-        .mini-card p {
-          margin: 0;
-          color: #666;
-          line-height: 1.6;
-          font-size: 14px;
         }
 
         .products-grid {
@@ -618,8 +479,6 @@ export default function App() {
 
         .muted,
         .soft-box p,
-        .daily-body p,
-        .info-card p,
         .story-panel p,
         .about-panel p,
         .contact-copy p {
@@ -769,41 +628,6 @@ export default function App() {
           font-size: 14px;
         }
 
-        .daily-header {
-          max-width: 760px;
-          margin-bottom: 22px;
-        }
-
-        .daily-story-list {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 20px;
-        }
-
-        .daily-card {
-          border-radius: 28px;
-          overflow: hidden;
-        }
-
-        .daily-image {
-          width: 100%;
-          height: 220px;
-          display: block;
-          object-fit: cover;
-          background: #f4efe8;
-        }
-
-        .daily-body {
-          padding: 20px;
-        }
-
-        .daily-body h3 {
-          margin: 0 0 8px 0;
-          font-size: 19px;
-          line-height: 1.45;
-          color: #21451f;
-        }
-
         .story-layout,
         .about-layout {
           display: grid;
@@ -838,35 +662,6 @@ export default function App() {
           border-radius: 18px;
           padding: 14px;
           font-weight: 700;
-        }
-
-        .benefit-grid {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
-        }
-
-        .info-card {
-          border-radius: 26px;
-          padding: 24px;
-        }
-
-        .info-emoji {
-          width: 44px;
-          height: 44px;
-          border-radius: 999px;
-          background: linear-gradient(135deg, #fff0d8 0%, #ffe8bc 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 12px;
-          font-size: 22px;
-        }
-
-        .info-card h3 {
-          margin: 0 0 10px 0;
-          font-size: 22px;
-          color: #21451f;
         }
 
         .contact-wrap {
@@ -905,17 +700,13 @@ export default function App() {
         }
 
         @media (max-width: 1024px) {
-          .hero-box,
           .story-layout,
           .about-layout,
           .contact-layout {
             grid-template-columns: 1fr;
           }
 
-          .mini-grid,
-          .bundle-grid,
-          .benefit-grid,
-          .daily-story-list {
+          .bundle-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
         }
@@ -943,22 +734,10 @@ export default function App() {
             font-size: 34px;
           }
 
-          .hero-images,
-          .mini-grid,
           .products-grid,
           .bundle-grid,
-          .daily-story-list,
-          .benefit-grid,
           .about-values {
             grid-template-columns: 1fr;
-          }
-
-          .hero-big,
-          .hero-small {
-            height: 220px;
-            grid-row: auto;
-            object-fit: contain;
-            padding: 6px;
           }
 
           .action-row {
@@ -983,7 +762,6 @@ export default function App() {
             <nav className="nav">
               <a href="#products">Products</a>
               <a href="#bundles">Bundles</a>
-              <a href="#daily">Daily Use</a>
               <a href="#brand-story">Story</a>
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
@@ -1016,12 +794,6 @@ export default function App() {
                       View combo offers
                     </a>
                   </div>
-                </div>
-
-                <div className="hero-images">
-                  <img className="hero-big" src="/healthy_spread.jpeg" alt="Healthy Spread" />
-                  <img className="hero-small" src="/coffee_spread.jpeg" alt="Coffee Reimagined" />
-                  <img className="hero-small" src="/cocoa_mix.jpeg" alt="Cocoa Nut Mix" />
                 </div>
               </div>
             </div>
@@ -1070,24 +842,6 @@ export default function App() {
             </div>
           </section>
 
-          <section id="daily" className="section">
-            <div className="container">
-              <div className="daily-header">
-                <div className="section-eyebrow">Daily Use</div>
-                <h2>Simple ways to enjoy every day</h2>
-                <p className="section-copy">
-                  Designed to fit into real routines — breakfast, snacks, and daily comfort moments.
-                </p>
-              </div>
-
-              <div className="daily-story-list">
-                {dailyCards.map((item) => (
-                  <DailyUseCard key={item.title} item={item} />
-                ))}
-              </div>
-            </div>
-          </section>
-
           <section id="brand-story" className="section">
             <div className="container">
               <div className="section-eyebrow">Brand Story</div>
@@ -1097,14 +851,14 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    What we eat every day shapes how we feel, think, and function. 
-                    Gut Lab by Xaels is built on the science of the gut–brain axis the understanding 
-                    that everyday food choices directly influence our health, mood, and long-term well-being. 
+                    What we eat every day shapes how we feel, think, and function.
+                    Gut Lab by Xaels is built on the science of the gut–brain axis the understanding
+                    that everyday food choices directly influence our health, mood, and long-term well-being.
                     We are not here to create niche health products. We are here to rethink everyday foods.
                   </p>
                   <p>
-                    By designing familiar formats spreads, drinks, and simple staples with more thoughtful 
-                    ingredients, we aim to offer a practical alternative that fits into real life, not just ideal 
+                    By designing familiar formats spreads, drinks, and simple staples with more thoughtful
+                    ingredients, we aim to offer a practical alternative that fits into real life, not just ideal
                     scenarios. Because real change doesn’t come from occasional choices. It comes from what we eat every day.
                   </p>
                 </div>
@@ -1133,17 +887,17 @@ export default function App() {
                 <div className="card about-panel">
                   <h3>Who we are</h3>
                   <p>
-                    Gut Lab by Xaels began from both science and personal experience. As scientists, we’ve 
-                    spent years understanding the microbiome and the gut–brain axis how what we eat every day 
-                    can quietly influence how we feel, think, and function. But it was only after the birth of 
-                    our child that this knowledge became personal. We started paying closer attention to the small, 
-                    everyday changes mood, energy, focus the subtle shifts between feeling calm, irritable, 
-                    or simply not at our best. 
+                    Gut Lab by Xaels began from both science and personal experience. As scientists, we’ve
+                    spent years understanding the microbiome and the gut–brain axis how what we eat every day
+                    can quietly influence how we feel, think, and function. But it was only after the birth of
+                    our child that this knowledge became personal. We started paying closer attention to the small,
+                    everyday changes mood, energy, focus the subtle shifts between feeling calm, irritable,
+                    or simply not at our best.
                   </p>
                   <p>
-                    And we began to question the role of the foods we consume daily, especially the growing reliance 
-                    on ultra-processed options. That’s where Gut Lab began. At Gut Lab by Xaels, we believe the 
-                    best products are the ones people can use consistently simple to incorporate, enjoyable to eat, 
+                    And we began to question the role of the foods we consume daily, especially the growing reliance
+                    on ultra-processed options. That’s where Gut Lab began. At Gut Lab by Xaels, we believe the
+                    best products are the ones people can use consistently simple to incorporate, enjoyable to eat,
                     and thoughtfully made with long-term well-being in mind.
                   </p>
                 </div>
@@ -1157,20 +911,6 @@ export default function App() {
                     <div className="about-value">Joyful product design</div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="section">
-            <div className="container">
-              <div className="benefit-grid">
-                {reasons.map((reason) => (
-                  <div key={reason.title} className="card info-card">
-                    <div className="info-emoji">{reason.icon}</div>
-                    <h3>{reason.title}</h3>
-                    <p>{reason.text}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </section>
