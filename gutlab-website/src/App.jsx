@@ -484,15 +484,17 @@ export default function App() {
         .hero-big {
           height: 430px;
           grid-row: span 2;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
+          padding: 8px;
           background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
         }
 
         .hero-small {
           height: 208px;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
+          padding: 6px;
           background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
         }
 
@@ -918,51 +920,51 @@ export default function App() {
           }
         }
 
-       @media (max-width: 700px) {
+        @media (max-width: 700px) {
           .container { padding: 0 16px; }
 
-        .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+          .header-inner {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .hero-box,
+          .story-panel,
+          .about-panel,
+          .bundle-wrap,
+          .contact-wrap {
+            padding: 24px;
+          }
+
+          .hero h1,
+          .section h2,
+          .bundle-wrap h2,
+          .contact-copy h2 {
+            font-size: 34px;
+          }
+
+          .hero-images,
+          .mini-grid,
+          .products-grid,
+          .bundle-grid,
+          .daily-story-list,
+          .benefit-grid,
+          .about-values {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-big,
+          .hero-small {
+            height: 220px;
+            grid-row: auto;
+            object-fit: contain;
+            padding: 6px;
+          }
+
+          .action-row {
+            flex-direction: column;
+          }
         }
-
-        .hero-box,
-        .story-panel,
-        .about-panel,
-        .bundle-wrap,
-        .contact-wrap {
-        padding: 24px;
-        }
-
-        .hero h1,
-        .section h2,
-        .bundle-wrap h2,
-        .contact-copy h2 {
-        font-size: 34px;
-    }
-
-      .hero-images,
-      .mini-grid,
-      .products-grid,
-      .bundle-grid,
-      .daily-story-list,
-      .benefit-grid,
-      .about-values {
-      grid-template-columns: 1fr;
-    }
-
-      .hero-big,
-      .hero-small {
-      height: 220px;
-      grid-row: auto;
-      object-fit: contain;
-      padding: 10px;
-    }
-
-    .action-row {
-      flex-direction: column;
-    }
-  }
       `}</style>
 
       <div className="page">
@@ -1014,6 +1016,7 @@ export default function App() {
                       View combo offers
                     </a>
                   </div>
+                </div>
 
                 <div className="hero-images">
                   <img className="hero-big" src="/healthy_spread.jpeg" alt="Healthy Spread" />
