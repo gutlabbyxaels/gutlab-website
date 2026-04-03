@@ -11,7 +11,6 @@ const products = [
   {
     name: "Healthy Spread",
     price: "SGD 10",
-    size: "150 g",
     image: "/healthy_spread.jpeg",
     tagline: "A scientist recipe for everyday nutrition.",
     description:
@@ -26,7 +25,6 @@ const products = [
   {
     name: "Coffee Reimagined",
     price: "SGD 10",
-    size: "150 g",
     image: "/coffee_spread.jpeg",
     tagline: "No sugar. No preservatives. Just smart energy.",
     description:
@@ -41,7 +39,6 @@ const products = [
   {
     name: "Cocoa Nut Mix",
     price: "SGD 18",
-    size: "250 g",
     image: "/cocoa_mix.jpeg",
     tagline: "Premium cocoa drink for everyday energy.",
     description:
@@ -199,6 +196,7 @@ const styles = `
     margin: 0 auto;
     padding: 0 24px;
   }
+
   .floating-layer {
     pointer-events: none;
     position: absolute;
@@ -439,8 +437,8 @@ const styles = `
     gap: 16px;
     margin-bottom: 16px;
   }
-  .mini-card, .info-card, .product-card, .bundle-card, .daily-story-card {
-    background: rgba(255,255,255,0.82);
+  .mini-card, .info-card, .product-card, .bundle-card, .daily-story-card, .story-panel, .about-panel {
+    background: rgba(255,255,255,0.88);
     border: 1px solid #efe2d2;
     box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     backdrop-filter: blur(8px);
@@ -520,11 +518,6 @@ const styles = `
     margin: 0;
     font-size: 24px;
     color: #21451f;
-  }
-  .product-size {
-    margin-top: 6px;
-    color: #777;
-    font-size: 14px;
   }
   .price-pill {
     background: #21451f;
@@ -642,8 +635,8 @@ const styles = `
   .bundle-wrap h2 {
     margin: 12px 0 10px 0;
     font-size: 42px;
-    color: #163a14;
-    text-shadow: none;
+    color: #000000 !important;
+    opacity: 1 !important;
   }
   .bundle-wrap p.top-copy {
     margin: 0 0 22px 0;
@@ -698,16 +691,14 @@ const styles = `
     margin-top: 18px;
   }
 
-  .daily-grid {
-    display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 24px;
-    align-items: start;
+  .daily-header {
+    max-width: 760px;
+    margin-bottom: 22px;
   }
   .daily-story-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
   }
   .daily-story-card {
     border-radius: 28px;
@@ -721,7 +712,7 @@ const styles = `
   .daily-story-image,
   .daily-story-fallback {
     width: 100%;
-    height: 185px;
+    height: 220px;
     display: block;
   }
   .daily-story-image {
@@ -794,6 +785,47 @@ const styles = `
     line-height: 1.65;
   }
 
+  .story-layout,
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: stretch;
+  }
+  .story-panel,
+  .about-panel {
+    border-radius: 30px;
+    padding: 28px;
+  }
+  .story-panel h3,
+  .about-panel h3 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: #21451f;
+  }
+  .story-panel p,
+  .about-panel p {
+    margin: 0 0 14px 0;
+    color: #666;
+    line-height: 1.78;
+    font-size: 15px;
+  }
+  .about-values {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .about-value {
+    background: #fff6ea;
+    border: 1px solid #f0debf;
+    color: #21451f;
+    border-radius: 18px;
+    padding: 14px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
   .benefit-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -855,17 +887,24 @@ const styles = `
     line-height: 1.75;
     max-width: 760px;
   }
+  .contact-note {
+    margin-top: 14px !important;
+    font-size: 14px;
+    color: #7a6c58 !important;
+  }
 
   @media (max-width: 1024px) {
     .hero-box,
-    .daily-grid,
-    .contact-grid {
+    .contact-grid,
+    .story-layout,
+    .about-layout {
       grid-template-columns: 1fr;
     }
     .mini-grid,
     .products-grid,
     .bundle-grid,
-    .benefit-grid {
+    .benefit-grid,
+    .daily-story-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -881,7 +920,11 @@ const styles = `
     .hero {
       padding-top: 28px;
     }
-    .hero-box {
+    .hero-box,
+    .story-panel,
+    .about-panel,
+    .bundle-wrap,
+    .contact-wrap {
       padding: 24px;
     }
     .hero h1,
@@ -895,7 +938,8 @@ const styles = `
     .products-grid,
     .bundle-grid,
     .daily-story-list,
-    .benefit-grid {
+    .benefit-grid,
+    .about-values {
       grid-template-columns: 1fr;
     }
     .hero-big,
@@ -950,7 +994,9 @@ export default function App() {
             <a href="#products">Products</a>
             <a href="#bundles">Bundles</a>
             <a href="#daily">Daily Use</a>
-            <a href="#contact">Order</a>
+            <a href="#brand-story">Story</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
           </nav>
         </div>
       </header>
@@ -1026,7 +1072,6 @@ export default function App() {
                     <div className="product-top">
                       <div>
                         <h3>{p.name}</h3>
-                        <div className="product-size">{p.size}</div>
                       </div>
                       <div className="price-pill">{p.price}</div>
                     </div>
@@ -1101,19 +1146,86 @@ export default function App() {
 
         <section id="daily" className="section">
           <div className="container">
-            <div className="daily-grid">
-              <div>
-                <div className="section-eyebrow">Daily Use</div>
-                <h2>Simple ways to enjoy these products every day</h2>
-                <p className="section-copy">
-                  These products are designed to fit easily into breakfast, snack time, and everyday routines.
+            <div className="daily-header">
+              <div className="section-eyebrow">Daily Use</div>
+              <h2>Simple ways to enjoy these products every day</h2>
+              <p className="section-copy">
+                These products are designed to fit easily into breakfast, snack time, and everyday routines.
+              </p>
+            </div>
+
+            <div className="daily-story-list">
+              {dailyCards.map((card) => (
+                <DailyUseCard key={card.title} card={card} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="brand-story" className="section">
+          <div className="container">
+            <div className="section-eyebrow">Brand Story</div>
+            <h2>Science-led food, made for everyday family life</h2>
+
+            <div className="story-layout" style={{ marginTop: 24 }}>
+              <div className="story-panel">
+                <h3>Why Gut Lab by Xaels exists</h3>
+                <p>
+                  Gut Lab by Xaels was created with a simple idea: everyday food can be joyful,
+                  familiar, and still thoughtfully made. We bring together science-led thinking,
+                  comforting flavors, and easy daily use to create products that fit naturally into
+                  breakfast, snack time, and family routines.
+                </p>
+                <p>
+                  Instead of making food that feels complicated or overly clinical, we focus on
+                  products that people actually want to keep using — spreads, drinks, and
+                  bundle-friendly items that feel cheerful, practical, and easy to enjoy.
                 </p>
               </div>
 
-              <div className="daily-story-list">
-                {dailyCards.map((card) => (
-                  <DailyUseCard key={card.title} card={card} />
-                ))}
+              <div className="story-panel">
+                <h3>What we want families to feel</h3>
+                <p>
+                  We want our products to feel easy, warm, and approachable — the kind of food you
+                  naturally reach for, gift to someone, or keep stocked at home.
+                </p>
+                <p>
+                  Our goal is not just to make something interesting once. It is to create products
+                  that genuinely belong in everyday family life.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="section">
+          <div className="container">
+            <div className="section-eyebrow">About Us</div>
+            <h2>Built by science, made for kids and families</h2>
+
+            <div className="about-layout" style={{ marginTop: 24 }}>
+              <div className="about-panel">
+                <h3>Who we are</h3>
+                <p>
+                  We are science-minded makers who care about building better everyday products for
+                  children, parents, and families. Our goal is to create food that feels
+                  approachable and enjoyable, while still being guided by thoughtful formulation,
+                  ingredient choices, and real-life routines.
+                </p>
+                <p>
+                  At Gut Lab by Xaels, we believe the best products are the ones that fit naturally
+                  into family life — simple to use, easy to love, and good enough to buy again.
+                </p>
+              </div>
+
+              <div className="about-panel">
+                <h3>What we value</h3>
+                <div className="about-values">
+                  <div className="about-value">Thoughtful ingredients</div>
+                  <div className="about-value">Everyday usability</div>
+                  <div className="about-value">Family-friendly ideas</div>
+                  <div className="about-value">Joyful product design</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1136,14 +1248,18 @@ export default function App() {
         <section id="contact" className="section" style={{ paddingBottom: 60 }}>
           <div className="container">
             <div className="contact-wrap">
-              <div className="contact-grid">
-                <div>
-                  <div className="section-eyebrow">Ready to order?</div>
-                  <h2>Message us directly and start ordering from this page</h2>
-                  <p>
-                    Use the order calculator for bundle totals, WhatsApp for direct orders, and TikTok Shop for social commerce.
-                  </p>
-                </div>
+              <div className="section-eyebrow">Contact</div>
+              <h2>Let’s help you choose the right order</h2>
+              <p>
+                Whether you want to try a single product, build a bundle, or ask a question before
+                ordering, we’d love to hear from you.
+              </p>
+              <p className="contact-note">
+                For custom bundle requests or bulk gifting orders, message us directly on WhatsApp.
+              </p>
+
+              <div className="contact-grid" style={{ marginTop: 24 }}>
+                <div></div>
 
                 <div className="contact-actions">
                   <a
