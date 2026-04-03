@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ORDER_CALCULATOR_URL = "https://gutlab-order.netlify.app/";
 const WHATSAPP_ORDER_URL =
@@ -154,54 +154,48 @@ const reasons = [
   {
     title: "Made for everyday use",
     text: "These products fit naturally into breakfast, snack time, lunchboxes, and small daily rituals.",
-    emoji: "☀️",
+    icon: "☀️",
   },
   {
     title: "Comfort food, upgraded",
     text: "Familiar flavors like chocolate, coffee, and cocoa reworked into more thoughtful everyday choices.",
-    emoji: "🍫",
+    icon: "🍫",
   },
   {
     title: "Easy to gift and repeat",
     text: "The range works for self-use, family purchase, gifting, and bundle-based repeat buying.",
-    emoji: "🎁",
+    icon: "🎁",
   },
 ];
 
 const dailyCards = [
   {
     image: "/use_toast.jpg",
-    emoji: "🍞",
     title: "Morning toast before work or school",
     text: "An easy breakfast habit that fits busy mornings and school routines.",
   },
   {
     image: "/use_snack.jpg",
-    emoji: "🍎",
     title: "Quick snack with crackers or fruit",
     text: "A simple afternoon snack idea that feels light, fun, and shareable.",
   },
   {
     image: "/use_pancake.jpg",
-    emoji: "🥞",
     title: "Add to pancakes, waffles, or oats",
     text: "A cheerful upgrade for breakfast bowls, weekend brunches, or evening treats.",
   },
   {
     image: "/use_cocoa.jpg",
-    emoji: "☕",
     title: "Enjoy Cocoa Nut Mix as a warm evening drink",
     text: "A cozy premium cocoa ritual for winding down at the end of the day.",
   },
   {
     image: "/use_gift.jpg",
-    emoji: "🎁",
     title: "Perfect as a thoughtful gift bundle",
     text: "A friendly, giftable format that feels personal and easy to share.",
   },
   {
     image: "/use_pantry.jpg",
-    emoji: "🧺",
     title: "Keep as a pantry staple for daily use",
     text: "Made to be the kind of product you naturally keep stocked at home.",
   },
@@ -230,13 +224,11 @@ function DailyUseCard({ card }) {
         />
       ) : (
         <div className="daily-story-fallback">
-          <div className="daily-story-fallback-emoji">{card.emoji}</div>
           <div className="daily-story-fallback-cloud">✨</div>
         </div>
       )}
 
       <div className="daily-story-content">
-        <div className="daily-story-chip">{card.emoji}</div>
         <h3>{card.title}</h3>
         <p>{card.text}</p>
       </div>
@@ -558,15 +550,17 @@ const styles = `
   .hero-big {
     height: 430px;
     grid-row: span 2;
-    object-fit: contain;
-    padding: 14px;
+    object-fit: cover;
     background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
   }
   .hero-small {
     height: 208px;
-    object-fit: contain;
-    padding: 12px;
+    object-fit: cover;
     background: linear-gradient(180deg, #f8efe3 0%, #f4efe8 100%);
+  }
+  .hero-cocoa {
+    object-fit: contain !important;
+    padding: 12px;
   }
 
   .mini-grid {
@@ -902,13 +896,6 @@ const styles = `
     background: rgba(255,255,255,0.22);
     border-radius: 999px;
   }
-  .daily-story-fallback-emoji {
-    position: absolute;
-    left: 28px;
-    bottom: 24px;
-    font-size: 56px;
-    filter: drop-shadow(0 10px 16px rgba(0,0,0,0.12));
-  }
   .daily-story-fallback-cloud {
     position: absolute;
     right: 28px;
@@ -918,17 +905,6 @@ const styles = `
   }
   .daily-story-content {
     padding: 20px;
-  }
-  .daily-story-chip {
-    width: 38px;
-    height: 38px;
-    border-radius: 999px;
-    background: #fff0d8;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    font-size: 18px;
   }
   .daily-story-content h3 {
     margin: 0 0 8px 0;
@@ -1211,7 +1187,7 @@ export default function App() {
                   alt="Coffee Reimagined"
                 />
                 <img
-                  className="hero-small"
+                  className="hero-small hero-cocoa"
                   src="/cocoa_mix.jpeg"
                   alt="Cocoa Nut Mix"
                 />
@@ -1371,7 +1347,7 @@ export default function App() {
             <div className="benefit-grid">
               {reasons.map((reason) => (
                 <div key={reason.title} className="info-card">
-                  <div className="info-emoji">{reason.emoji}</div>
+                  <div className="info-emoji">{reason.icon}</div>
                   <h3>{reason.title}</h3>
                   <p>{reason.text}</p>
                 </div>
