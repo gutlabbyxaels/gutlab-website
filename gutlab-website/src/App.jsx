@@ -993,7 +993,7 @@ export default function App() {
               <div className="hero-box">
                 <div className="hero-content">
                   <div className="eyebrow">Signature Collection</div>
-                  <h1>Playful everyday foods with a premium, feel-good story.</h1>
+                  <h1>A better everyday alternative to ultra-processed food.</h1>
                   <p className="hero-copy">
                     Gut Lab by Xaels brings together cheerful branding, smart ingredient positioning,
                     and easy daily use — from breakfast toast to warm cocoa rituals.
