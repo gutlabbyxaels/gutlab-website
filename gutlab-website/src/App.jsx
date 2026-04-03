@@ -1013,36 +1013,12 @@ export default function App() {
                     </a>
                   </div>
 
-                  <div className="hero-badges">
-                    <span className="badge">Made for everyday family use</span>
-                    <span className="badge">Thoughtfully crafted ingredients</span>
-                    <span className="badge">Naturally sweetened with dates</span>
-                    <span className="badge">No preservatives. No chemicals.</span>
-                  </div>
-                </div>
-
                 <div className="hero-images">
                   <img className="hero-big" src="/healthy_spread.jpeg" alt="Healthy Spread" />
                   <img className="hero-small" src="/coffee_spread.jpeg" alt="Coffee Reimagined" />
                   <img className="hero-small" src="/cocoa_mix.jpeg" alt="Cocoa Nut Mix" />
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section className="container">
-            <div className="mini-grid">
-              {[
-                ["Breakfast hero", "Easy on toast, oats, and pancakes"],
-                ["Giftable", "Playful, premium-looking products"],
-                ["Family-friendly", "Comforting everyday flavor cues"],
-                ["Social-commerce ready", "Built for bundles and repeat buys"],
-              ].map(([title, text]) => (
-                <div key={title} className="card mini-card">
-                  <h4>{title}</h4>
-                  <p>{text}</p>
-                </div>
-              ))}
             </div>
           </section>
 
