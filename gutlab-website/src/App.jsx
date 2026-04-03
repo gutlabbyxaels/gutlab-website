@@ -90,8 +90,8 @@ const products = [
       "Butter",
       "Eggs",
       "Cocoa",
-      "Flour",
-      "Natural sweetener",
+      "Millet Flour",
+      "Dates",
     ],
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20500g%20Fudge%20Brownie.",
@@ -112,8 +112,8 @@ const products = [
       "Butter",
       "Eggs",
       "Cocoa",
-      "Flour",
-      "Natural sweetener",
+      "Millet Flour",
+      "Dates",
     ],
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%201100g%20Fudge%20Brownie.",
