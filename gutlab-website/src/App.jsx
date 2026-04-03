@@ -1116,15 +1116,15 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    Gut Lab by Xaels was created with a simple idea: everyday food can be joyful,
-                    familiar, and still thoughtfully made. We bring together science-led thinking,
-                    comforting flavors, and easy daily use to create products that fit naturally into
-                    breakfast, snack time, and family routines.
+                    What we eat every day shapes how we feel, think, and function. 
+                    Gut Lab by Xaels is built on the science of the gut–brain axis the understanding 
+                    that everyday food choices directly influence our health, mood, and long-term well-being. 
+                    We are not here to create niche health products. We are here to rethink everyday foods.
                   </p>
                   <p>
-                    Instead of making food that feels complicated or overly clinical, we focus on
-                    products that people actually want to keep using — spreads, drinks, brownies, and
-                    bundle-friendly items that feel cheerful, practical, and easy to enjoy.
+                    By designing familiar formats spreads, drinks, and simple staples with more thoughtful 
+                    ingredients, we aim to offer a practical alternative that fits into real life, not just ideal 
+                    scenarios. Because real change doesn’t come from occasional choices. It comes from what we eat every day.
                   </p>
                 </div>
 
@@ -1152,14 +1152,18 @@ export default function App() {
                 <div className="card about-panel">
                   <h3>Who we are</h3>
                   <p>
-                    We are science-minded makers who care about building better everyday products for
-                    children, parents, and families. Our goal is to create food that feels
-                    approachable and enjoyable, while still being guided by thoughtful formulation,
-                    ingredient choices, and real-life routines.
+                    Gut Lab by Xaels began from both science and personal experience. As scientists, we’ve 
+                    spent years understanding the microbiome and the gut–brain axis how what we eat every day 
+                    can quietly influence how we feel, think, and function. But it was only after the birth of 
+                    our child that this knowledge became personal. We started paying closer attention to the small, 
+                    everyday changes mood, energy, focus the subtle shifts between feeling calm, irritable, 
+                    or simply not at our best. 
                   </p>
                   <p>
-                    At Gut Lab by Xaels, we believe the best products are the ones that fit naturally
-                    into family life — simple to use, easy to love, and good enough to buy again.
+                    And we began to question the role of the foods we consume daily, especially the growing reliance 
+                    on ultra-processed options. That’s where Gut Lab began. At Gut Lab by Xaels, we believe the 
+                    best products are the ones people can use consistently simple to incorporate, enjoyable to eat, 
+                    and thoughtfully made with long-term well-being in mind.
                   </p>
                 </div>
 
