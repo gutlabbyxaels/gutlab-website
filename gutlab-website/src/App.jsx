@@ -123,9 +123,9 @@ const products = [
 const bundles = [
   {
     title: "Starter Trio",
-    price: "SGD 38",
+    price: "SGD 35",
     badge: "Best Value",
-    desc: "Any 3 products for SGD 38",
+    desc: "Any 3 products for SGD 35",
     note: "Perfect first purchase to try the Gut Lab range.",
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2038.",
