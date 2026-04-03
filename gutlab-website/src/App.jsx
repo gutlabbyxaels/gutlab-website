@@ -42,12 +42,12 @@ const products = [
 const bundles = [
   {
     title: "Starter Trio",
-    price: "SGD 28",
+    price: "SGD 38",
     badge: "Best Value",
-    desc: "Any 3 products for SGD 28",
+    desc: "Any 3 products for SGD 38",
     note: "Perfect first purchase to try the Gut Lab range.",
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2028.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2038.",
   },
   {
     title: "Spread Duo",
@@ -60,12 +60,12 @@ const bundles = [
   },
   {
     title: "Cocoa + Spread Set",
-    price: "SGD 24",
+    price: "SGD 27",
     badge: "Premium Pick",
     desc: "Cocoa Nut Mix + Healthy Spread",
     note: "A rich breakfast and snack pairing with premium cocoa.",
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Cocoa%20%2B%20Spread%20Set%20for%20SGD%2024.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Cocoa%20%2B%20Spread%20Set%20for%20SGD%2027.",
   },
 ];
 
@@ -86,11 +86,11 @@ const benefits = [
 
 const waysToUse = [
   "Spread on toast before work or school",
-  "Pair with crackers or fruit for quick snacking",
+  "Pair with crackers or fruit for a quick snack",
   "Add to pancakes, waffles, or oats",
-  "Enjoy Cocoa Nut Mix as a warm evening ritual",
-  "Gift as a cheerful small-batch bundle",
-  "Keep as a pantry staple for repeat buying",
+  "Enjoy Cocoa Nut Mix as a warm evening drink",
+  "Gift it as a cheerful small-batch bundle",
+  "Keep it as a pantry staple for repeat purchases",
 ];
 
 const styles = {
@@ -380,13 +380,13 @@ export default function App() {
                 textTransform: "uppercase",
               }}
             >
-              Our products
+              Our Products
             </div>
             <h2 style={{ fontSize: 40, margin: "10px 0 8px 0", color: "#21451f" }}>
-              Simple, clean, and ready to sell
+              Simple products that fit naturally into daily life
             </h2>
             <p style={{ color: "#666", fontSize: 16, lineHeight: 1.7, maxWidth: 760 }}>
-              A lightweight storefront with clear pricing, product benefits, and direct order flow.
+              A clean, easy-to-shop range with clear pricing, simple benefits, and everyday use cases.
             </p>
           </div>
 
@@ -495,7 +495,7 @@ export default function App() {
                   textTransform: "uppercase",
                 }}
               >
-                Combo offers
+                Combo Offers
               </div>
               <h2 style={{ fontSize: 38, margin: "10px 0 10px 0" }}>
                 Easy bundle choices for higher orders
@@ -581,13 +581,13 @@ export default function App() {
                   textTransform: "uppercase",
                 }}
               >
-                Daily use
+                Daily Use
               </div>
               <h2 style={{ fontSize: 38, margin: "10px 0 10px 0", color: "#21451f" }}>
-                Why people can buy again
+                Simple ways to enjoy these products every day
               </h2>
               <p style={{ color: "#666", fontSize: 16, lineHeight: 1.7 }}>
-                A good selling website should show how the products fit real life, not just what they are.
+                These products are designed to fit easily into breakfast, snack time, and everyday routines.
               </p>
             </div>
 
