@@ -53,7 +53,7 @@ const products = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Coffee%20Reimagined.",
   },
   {
-    name: "Cocoa Nut Mix",
+    name: "GutLab healthy nut Mix",
     price: "SGD 18",
     image: "/cocoa_mix.jpeg",
     tagline: "Premium cocoa drink for everyday energy.",
@@ -140,10 +140,10 @@ const bundles = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Spread%20Duo%20bundle%20for%20SGD%2018.",
   },
   {
-    title: "Cocoa + Spread Set",
+    title: "GutLab Healthy Nut Mix + Spread Set",
     price: "SGD 27",
     badge: "Premium Pick",
-    desc: "Cocoa Nut Mix + Healthy Spread",
+    desc: "GutLab Healthy Nut Mix + Healthy Spread",
     note: "A rich breakfast and snack pairing with premium cocoa.",
     order:
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Cocoa%20%2B%20Spread%20Set%20for%20SGD%2027.",
@@ -805,7 +805,7 @@ export default function App() {
               <div className="section-eyebrow">Our Products</div>
               <h2>Familiar foods, reworked with better ingredients</h2>
               <p className="section-copy">
-                Everyday formats like spreads, cocoa, and brownies — designed to feel familiar, but made more thoughtfully for daily use.
+                Everyday formats like spreads, Health Mix, and brownies — designed to feel familiar, but made more thoughtfully for daily use.
               </p>
 
               <div className="products-grid">
@@ -852,14 +852,14 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    What What we eat every day shapes how we feel — our energy, mood, focus, and even 
+                    What we eat every day shapes how we feel — our energy, mood, focus, and even 
                     how we respond to stress.
                     
                     Gut Lab by Xaels is built on the science of the gut–brain axis — the connection 
                     between food, the microbiome, and how we function daily.
                   </p>
                   <p>
-                    By As scientists, we’ve studied this for years. But it became real when we started seeing 
+                    As scientists, we’ve studied this for years. But it became real when we started seeing 
                     these effects in our own lives — especially after becoming parents.
                     
                     That’s when we realised: the biggest impact doesn’t come from occasional healthy choices.
@@ -870,10 +870,10 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>What makes the range special</h3>
                   <p>
-                    We We don’t create “health products.” 
+                    We don’t create “health products.” 
                     We rethink everyday foods.
                     
-                    Spreads, cocoa drinks, brownies — familiar formats that people already enjoy, 
+                    Spreads, Health mix drinks, brownies — familiar formats that people already enjoy, 
                     redesigned with more thoughtful ingredients and long-term use in mind.
                     Because the best products are the ones you actually keep using.
                   </p>
