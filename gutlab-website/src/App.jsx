@@ -778,6 +778,7 @@ export default function App() {
                   <h1>Everyday food that quietly shapes how your family feels.</h1>
                   <p className="hero-copy">
                     Built on the science of the gut–brain axis. Simple foods designed for better mornings, calmer days, and real family routines — without ultra-processed shortcuts.
+                    
                     No Refined Sugar, No Preservatives, Made with Natural ingredients and Designed for everyday use. 
                   </p>
 
