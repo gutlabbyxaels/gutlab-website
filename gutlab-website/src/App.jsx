@@ -775,10 +775,10 @@ export default function App() {
               <div className="hero-box">
                 <div className="hero-content">
                   <div className="eyebrow">Signature Collection</div>
-                  <h1>A better everyday alternative to ultra-processed food.</h1>
+                  <h1>Everyday food that quietly shapes how your family feels.</h1>
                   <p className="hero-copy">
-                    Built on the science of the gut–brain axis and designed for family morning routines.
-                    Simple foods that fit into breakfast, snacks, and daily life — without compromising on what matters
+                    Built on the science of the gut–brain axis. Simple foods designed for better mornings, calmer days, and real family routines — without ultra-processed shortcuts.
+                    No Refined Sugar, No Preservatives, Made with Natural ingredients and Designed for everyday use. 
                   </p>
 
                   <div className="hero-buttons">
@@ -802,9 +802,9 @@ export default function App() {
           <section id="products" className="section">
             <div className="container">
               <div className="section-eyebrow">Our Products</div>
-              <h2>Simple products that fit naturally into daily life</h2>
+              <h2>Familiar foods, reworked with better ingredients</h2>
               <p className="section-copy">
-                A clean, easy-to-shop range with clear pricing, simple benefits, and everyday use cases.
+                Everyday formats like spreads, cocoa, and brownies — designed to feel familiar, but made more thoughtfully for daily use.
               </p>
 
               <div className="products-grid">
@@ -821,7 +821,7 @@ export default function App() {
                 <div className="bundle-eyebrow">Combo Offers</div>
                 <h2>Easy bundle choices for higher orders</h2>
                 <p className="top-copy">
-                  Bundle offers make it easier for customers to try more, gift more, and buy again.
+                  Designed for real buying behaviour — try more, save more, and come back again.
                 </p>
 
                 <div className="bundle-grid">
@@ -851,23 +851,30 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    What we eat every day shapes how we feel, think, and function.
-                    Gut Lab by Xaels is built on the science of the gut–brain axis the understanding
-                    that everyday food choices directly influence our health, mood, and long-term well-being.
-                    We are not here to create niche health products. We are here to rethink everyday foods.
+                    What What we eat every day shapes how we feel — our energy, mood, focus, and even 
+                    how we respond to stress.
+                    
+                    Gut Lab by Xaels is built on the science of the gut–brain axis — the connection 
+                    between food, the microbiome, and how we function daily.
                   </p>
                   <p>
-                    By designing familiar formats spreads, drinks, and simple staples with more thoughtful
-                    ingredients, we aim to offer a practical alternative that fits into real life, not just ideal
-                    scenarios. Because real change doesn’t come from occasional choices. It comes from what we eat every day.
+                    By As scientists, we’ve studied this for years. But it became real when we started seeing 
+                    these effects in our own lives — especially after becoming parents.
+                    
+                    That’s when we realised: the biggest impact doesn’t come from occasional healthy choices.
+                    It comes from what we eat every single day.
                   </p>
                 </div>
 
                 <div className="card story-panel">
                   <h3>What makes the range special</h3>
                   <p>
-                    We use ancient millets, naturally sweeten where possible with dates, and build
-                    products around warmth, familiarity, and repeat use.
+                    We We don’t create “health products.” 
+                    We rethink everyday foods.
+                    
+                    Spreads, cocoa drinks, brownies — familiar formats that people already enjoy, 
+                    redesigned with more thoughtful ingredients and long-term use in mind.
+                    Because the best products are the ones you actually keep using.
                   </p>
                   <p>
                     Our approach is simple: make food that families can trust, children can enjoy, and
@@ -887,28 +894,27 @@ export default function App() {
                 <div className="card about-panel">
                   <h3>Who we are</h3>
                   <p>
-                    Gut Lab by Xaels began from both science and personal experience. As scientists, we’ve
-                    spent years understanding the microbiome and the gut–brain axis how what we eat every day
-                    can quietly influence how we feel, think, and function. But it was only after the birth of
-                    our child that this knowledge became personal. We started paying closer attention to the small,
-                    everyday changes mood, energy, focus the subtle shifts between feeling calm, irritable,
-                    or simply not at our best.
+                    Gut Lab by Xaels started at the intersection of science and real life.
+                    
+                    We’ve spent years understanding the microbiome and gut–brain connection — but it 
+                    was only after becoming parents that we started questioning everyday food more seriously.
                   </p>
                   <p>
-                    And we began to question the role of the foods we consume daily, especially the growing reliance
-                    on ultra-processed options. That’s where Gut Lab began. At Gut Lab by Xaels, we believe the
-                    best products are the ones people can use consistently simple to incorporate, enjoyable to eat,
-                    and thoughtfully made with long-term well-being in mind.
+                    The small things — mood, energy, irritability, focus — started to matter more.
+                    And we realised how much of it is influenced by what we eat daily.
+                    
+                    That’s why we build products that are not just better — but practical, repeatable, and 
+                    made for real family routines.
                   </p>
                 </div>
 
                 <div className="card about-panel">
                   <h3>What we value</h3>
                   <div className="about-values">
-                    <div className="about-value">Thoughtful ingredients</div>
+                    <div className="about-value">Science-led thinking</div>
                     <div className="about-value">Everyday usability</div>
                     <div className="about-value">Family-friendly ideas</div>
-                    <div className="about-value">Joyful product design</div>
+                    <div className="about-value">Built for repeat use</div>
                   </div>
                 </div>
               </div>
@@ -922,10 +928,10 @@ export default function App() {
 
                 <div className="contact-layout">
                   <div className="contact-copy">
-                    <h2>Let’s help you choose the right order</h2>
+                    <h2>Start with one product. Build your routine from there.</h2>
                     <p>
-                      Whether you want to try a single product, build a bundle, or ask a question
-                      before ordering, we’d love to hear from you.
+                      Try a single product, or start with a bundle.
+                      Gut Lab is designed to fit into your daily routine — not change it completely.
                     </p>
                     <p className="contact-note">
                       For custom bundle requests or bulk gifting orders, message us directly on
