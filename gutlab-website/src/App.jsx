@@ -80,7 +80,7 @@ const products = [
   },
   {
     name: "Veggie Unlocked – Roasted Capsicum Spread",
-    price: "SGD 12",
+    price: "SGD 10",
     image: "/roasted_capsicum.jpeg",
     tagline: "Vegetables, made easier to enjoy every day.",
     description:
@@ -166,7 +166,7 @@ const bundles = [
     title: "Everyday Essentials",
     price: "SGD 35",
     badge: "Most Chosen",
-    desc: "Any 3 products",
+    desc: "Any 3 spread",
     note: "Most customers choose this to try more and save.",
     saving: "Most customers choose this",
     highlight: true,
@@ -175,7 +175,7 @@ const bundles = [
   },
   {
     title: "Family Pack",
-    price: "SGD 55",
+    price: "SGD 75",
     badge: "Best Value",
     desc: "Spread + Nourish+ + Brownie",
     note: "Perfect for families, gifting, or stocking up.",
