@@ -12,18 +12,18 @@ const products = [
     name: "Healthy Spread",
     price: "SGD 10",
     image: "/healthy_spread.jpeg",
-    tagline: "A scientist recipe, Built for everyday nourishment, not just sweetness.",
+    tagline: "Built for everyday nourishment, not just sweetness.",
     description:
-      "A better-for-you everyday spread designed for toast, breakfast bowls, pancakes, and snack ti",
+      "A familiar breakfast spread reworked with more thoughtful ingredients for toast, breakfast bowls, pancakes, and snack time.",
     story:
       "Created from a scientist’s perspective on how everyday food shapes energy, mood, and long-term health — without making food feel restrictive or complicated.",
-    tags: ["Family-friendly", "Everyday use", "Comfort food"],
+    tags: ["Family-friendly", "Daily staple", "Comfort food"],
     ways: ["Spread on toast", "Add to oats", "Use with pancakes"],
     ingredients: [
       "Butter",
       "Avocado oil",
       "Ragi (millet)",
-      "Cocoa",
+      "Cocoa powder",
       "Date syrup",
       "Honey",
     ],
@@ -34,12 +34,12 @@ const products = [
     name: "Coffee Reimagined",
     price: "SGD 10",
     image: "/coffee_spread.jpeg",
-    tagline: "No sugar. No preservatives. Just smart energy.",
+    tagline: "Coffee flavor, reworked for everyday nourishment.",
     description:
-      "A rich coffee-inspired spread made for bread, crackers, waffles, and dessert moments.",
+      "A coffee-inspired spread designed for bread, crackers, waffles, and dessert moments — with a more thoughtful everyday format.",
     story:
-      "Made for people who love coffee flavor, but want it in a more playful, versatile everyday format.",
-    tags: ["Coffee-forward", "Smart energy", "Snack use"],
+      "Built for people who enjoy coffee flavor, but want a more flexible, balanced way to enjoy it across breakfast, snacks, and simple daily routines.",
+    tags: ["Coffee-forward", "Balanced energy", "Snack-friendly"],
     ways: ["Spread on toast", "Pair with crackers", "Use in desserts"],
     ingredients: [
       "Butter",
@@ -56,67 +56,95 @@ const products = [
     name: "Nourish+ Cocoa & Nut Blend",
     price: "SGD 18",
     image: "/cocoa_mix.jpeg",
-    tagline: "Premium cocoa drink for everyday energy.",
+    tagline: "Daily nourishment built on gut–brain science.",
     description:
-      "A daily nourishment blend designed to support energy, focus, and gut health. Made with real cocoa, nuts, and grains",
+      "A functional cocoa and nut blend designed to support steady energy, focus, and gut health — using real ingredients without refined sugar or unnecessary additives.",
     story:
-      "Built on the understanding that what we consume daily shapes how we feel, think, and function.",
-    tags: ["Supports steady energy", "Comforting daily ritual", "No refined sugar or preservatives"],
-    ways: ["Hot cocoa drink", "Blend into smoothies", "Stir into oats"],
+      "Built on the understanding that what we consume daily shapes how we think, feel, and function — Nourish+ turns that science into a simple, repeatable daily ritual.",
+    tags: [
+      "Supports steady energy",
+      "Comforting daily ritual",
+      "No refined sugar",
+    ],
+    ways: ["Warm daily ritual", "Blend into smoothies", "Stir into oats"],
     ingredients: [
       "Barley",
       "Oats",
       "Almonds",
       "Cashews",
       "Milk powder",
-      "Cocoa",
+      "Cocoa powder",
     ],
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Cocoa%20Nut%20Mix.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Nourish%2B%20Cocoa%20%26%20Nut%20Blend.",
+  },
+  {
+    name: "Veggie Unlocked – Roasted Capsicum Spread",
+    price: "SGD 12",
+    image: "/roasted_capsicum.jpeg",
+    tagline: "Vegetables, made easier to enjoy every day.",
+    description:
+      "A savory roasted capsicum spread designed to make vegetables more approachable, flavorful, and easy to include in everyday meals.",
+    story:
+      "Created to solve a real family problem: getting vegetables into daily routines without resistance. Veggie Unlocked transforms familiar ingredients into something people naturally reach for.",
+    tags: ["Vegetable-first", "Kid-friendly", "Savory everyday use"],
+    ways: [
+      "Spread on toast or sandwiches",
+      "Use in wraps or lunchboxes",
+      "Pair with crackers or meals",
+    ],
+    ingredients: [
+      "Roasted capsicum",
+      "Garlic",
+      "Olive oil",
+      "Natural seasoning",
+    ],
+    order:
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Veggie%20Unlocked%20%E2%80%93%20Roasted%20Capsicum%20Spread.",
   },
   {
     name: "Millet Healthy Brownie (500g)",
     price: "SGD 50",
     image: "/brownie_500.jpg",
-    tagline: "Rich, fudgy, small-batch brownie.",
+    tagline: "Indulgence, without everyday compromise.",
     description:
-      "A decadent brownie block that feels giftable, indulgent, and perfect for sharing.",
+      "A rich, fudgy brownie made for moments of enjoyment — crafted with better ingredient choices while still delivering the indulgence people expect.",
     story:
-      "A smaller-format brownie for gifting, celebrations, or a premium treat at home.",
+      "Created to balance enjoyment with intention — because everyday food should feel good, but treats should still exist.",
     tags: ["Giftable", "Small-batch", "Indulgent"],
     ways: ["Serve warm", "Share with family", "Gift to friends"],
     ingredients: [
       "Dark chocolate",
       "Butter",
       "Eggs",
-      "Cocoa",
-      "Millet Flour",
+      "Cocoa powder",
+      "Millet flour",
       "Dates",
     ],
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20500g%20Fudge%20Brownie.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20500g%20Millet%20Healthy%20Brownie.",
   },
   {
     name: "Millet Healthy Brownie (1100g)",
     price: "SGD 110",
     image: "/brownie_1100.jpg",
-    tagline: "Large indulgent brownie slab.",
+    tagline: "Made for sharing, built to feel special.",
     description:
-      "A celebration-sized brownie for gatherings, family sharing, gifting, and serious chocolate cravings.",
+      "A larger-format brownie designed for gatherings, gifting, and shared moments — rich, generous, and thoughtfully made.",
     story:
-      "Created for bigger moments — generous, rich, and made to feel special.",
+      "Built for celebrations and family moments — where food brings people together, without losing sight of quality and ingredients.",
     tags: ["Celebration size", "Premium gift", "Shareable"],
     ways: ["Serve at gatherings", "Gift for occasions", "Share at home"],
     ingredients: [
       "Dark chocolate",
       "Butter",
       "Eggs",
-      "Cocoa",
-      "Millet Flour",
+      "Cocoa powder",
+      "Millet flour",
       "Dates",
     ],
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%201100g%20Fudge%20Brownie.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%201100g%20Millet%20Healthy%20Brownie.",
   },
 ];
 
@@ -128,7 +156,7 @@ const bundles = [
     desc: "Any 3 products for SGD 35",
     note: "Perfect first purchase to try the Gut Lab range.",
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2038.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2035.",
   },
   {
     title: "Spread Duo",
@@ -140,13 +168,13 @@ const bundles = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Spread%20Duo%20bundle%20for%20SGD%2018.",
   },
   {
-    title: "GutLab Healthy Nut Mix + Spread Set",
+    title: "Nourish+ + Spread Set",
     price: "SGD 27",
     badge: "Premium Pick",
-    desc: "GutLab Healthy Nut Mix + Healthy Spread",
-    note: "A rich breakfast and snack pairing with premium cocoa.",
+    desc: "Nourish+ Cocoa & Nut Blend + Healthy Spread",
+    note: "A strong breakfast and snack pairing for everyday routines.",
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Cocoa%20%2B%20Spread%20Set%20for%20SGD%2027.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Nourish%2B%20%2B%20Spread%20Set%20for%20SGD%2027.",
   },
 ];
 
@@ -163,35 +191,40 @@ function ProductCard({ product }) {
         <p className="tagline">{product.tagline}</p>
         <p className="muted">{product.description}</p>
 
-        <div className="soft-box">
-          <strong>Why it matters</strong>
-          <p>{product.story}</p>
-        </div>
+        <details className="product-dropdown">
+          <summary>Why it matters</summary>
+          <div className="soft-box dropdown-box">
+            <p>{product.story}</p>
+            <div className="tag-row">
+              {product.tags.map((tag) => (
+                <span key={tag} className="chip">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </details>
 
-        <div className="tag-row">
-          {product.tags.map((tag) => (
-            <span key={tag} className="chip">
-              {tag}
-            </span>
-          ))}
-        </div>
+        <details className="product-dropdown">
+          <summary>Simple ways to enjoy</summary>
+          <div className="soft-box dropdown-box">
+            <ul>
+              {product.ways.map((way) => (
+                <li key={way}>{way}</li>
+              ))}
+            </ul>
+          </div>
+        </details>
 
-        <div className="soft-box">
-          <strong>Simple ways to enjoy</strong>
-          <ul>
-            {product.ways.map((way) => (
-              <li key={way}>{way}</li>
-            ))}
-          </ul>
-        </div>
-
-        <details className="ingredients">
+        <details className="product-dropdown">
           <summary>View Ingredients</summary>
-          <ul>
-            {product.ingredients.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <div className="soft-box dropdown-box">
+            <ul>
+              {product.ingredients.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </details>
 
         <div className="action-row">
@@ -333,11 +366,12 @@ export default function App() {
           font-size: 54px;
           line-height: 1.03;
           color: #21451f;
+          max-width: 920px;
         }
 
         .hero-copy {
           margin: 0;
-          max-width: 620px;
+          max-width: 820px;
           font-size: 18px;
           line-height: 1.75;
           color: #5f5f5f;
@@ -475,6 +509,7 @@ export default function App() {
           font-weight: 800;
           margin-top: 14px;
           font-size: 15px;
+          line-height: 1.6;
         }
 
         .muted,
@@ -517,18 +552,52 @@ export default function App() {
           border-radius: 999px;
         }
 
-        .ingredients {
+        .product-dropdown {
           margin-top: 14px;
-          border-radius: 14px;
+          border-radius: 18px;
           background: #faf6ef;
           border: 1px solid #eee0c9;
-          padding: 12px 14px;
+          overflow: hidden;
         }
 
-        .ingredients summary {
+        .product-dropdown summary {
           cursor: pointer;
-          font-weight: 700;
+          list-style: none;
+          padding: 16px 18px;
+          font-weight: 800;
           color: #21451f;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .product-dropdown summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .product-dropdown summary::after {
+          content: "+";
+          font-size: 22px;
+          line-height: 1;
+          color: #21451f;
+        }
+
+        .product-dropdown[open] summary::after {
+          content: "−";
+        }
+
+        .dropdown-box {
+          margin-top: 0;
+          border: 0;
+          border-top: 1px solid #eee0c9;
+          border-radius: 0;
+          background: linear-gradient(135deg, #fff8ef 0%, #fff3e1 100%);
+        }
+
+        .dropdown-box p,
+        .dropdown-box ul {
+          margin-top: 0;
         }
 
         .ingredients ul,
@@ -755,7 +824,9 @@ export default function App() {
               </div>
               <div>
                 <div className="brand-title">Gut Lab by Xaels</div>
-                <div className="brand-sub">A Healthier everyday breakfast, built on gut–brain science</div>
+                <div className="brand-sub">
+                  Healthier everyday food, built on gut–brain science
+                </div>
               </div>
             </div>
 
@@ -778,8 +849,8 @@ export default function App() {
                   <h1>Everyday food that shapes your family’s energy, mood, and wellbeing</h1>
                   <p className="hero-copy">
                     Built on the science of the gut–brain axis. Simple foods designed for better mornings, calmer days, and real family routines — without ultra-processed shortcuts.
-                    
-                    No Refined Sugar, No Preservatives, Made with Natural ingredients and Designed for everyday use. 
+                    <br /><br />
+                    No refined sugar. No preservatives. Made with thoughtful ingredients and designed for everyday use.
                   </p>
 
                   <div className="hero-buttons">
@@ -805,7 +876,7 @@ export default function App() {
               <div className="section-eyebrow">Our Products</div>
               <h2>Familiar foods, reworked with better ingredients</h2>
               <p className="section-copy">
-                Everyday formats like spreads, Health Mix, and brownies — designed to feel familiar, but made more thoughtfully for daily use.
+                Everyday formats like spreads, nourishment blends, and brownies — designed to feel familiar, but made more thoughtfully for daily life.
               </p>
 
               <div className="products-grid">
@@ -852,16 +923,18 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    What we eat every day shapes how we feel — our energy, mood, focus, and even 
+                    What we eat every day shapes how we feel — our energy, mood, focus, and even
                     how we respond to stress.
-                    
-                    Gut Lab by Xaels is built on the science of the gut–brain axis — the connection 
+                  </p>
+                  <p>
+                    Gut Lab by Xaels is built on the science of the gut–brain axis — the connection
                     between food, the microbiome, and how we function daily.
                   </p>
                   <p>
-                    As scientists, we’ve studied this for years. But it became real when we started seeing 
+                    As scientists, we’ve studied this for years. But it became real when we started seeing
                     these effects in our own lives — especially after becoming parents.
-                    
+                  </p>
+                  <p>
                     That’s when we realised: the biggest impact doesn’t come from occasional healthy choices.
                     It comes from what we eat every single day.
                   </p>
@@ -870,11 +943,13 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>What makes the range special</h3>
                   <p>
-                    We don’t create “health products.” 
-                    We rethink everyday foods.
-                    
-                    Spreads, Health mix drinks, brownies — familiar formats that people already enjoy, 
+                    We don’t create “health products.” We rethink everyday foods.
+                  </p>
+                  <p>
+                    Spreads, nourishment blends, savory products, and brownies — familiar formats that people already enjoy,
                     redesigned with more thoughtful ingredients and long-term use in mind.
+                  </p>
+                  <p>
                     Because the best products are the ones you actually keep using.
                   </p>
                   <p>
@@ -896,15 +971,17 @@ export default function App() {
                   <h3>Who we are</h3>
                   <p>
                     Gut Lab by Xaels started at the intersection of science and real life.
-                    
-                    We’ve spent years understanding the microbiome and gut–brain connection — but it 
+                  </p>
+                  <p>
+                    We’ve spent years understanding the microbiome and gut–brain connection — but it
                     was only after becoming parents that we started questioning everyday food more seriously.
                   </p>
                   <p>
                     The small things — mood, energy, irritability, focus — started to matter more.
                     And we realised how much of it is influenced by what we eat daily.
-                    
-                    That’s why we build products that are not just better — but practical, repeatable, and 
+                  </p>
+                  <p>
+                    That’s why we build products that are not just better — but practical, repeatable, and
                     made for real family routines.
                   </p>
                 </div>
