@@ -12,11 +12,11 @@ const products = [
     name: "Healthy Spread",
     price: "SGD 10",
     image: "/healthy_spread.jpeg",
-    tagline: "A scientist recipe for everyday nutrition.",
+    tagline: "A scientist recipe, Built for everyday nourishment, not just sweetness.",
     description:
-      "A better-for-you everyday spread designed for toast, breakfast bowls, pancakes, and snack time.",
+      "A better-for-you everyday spread designed for toast, breakfast bowls, pancakes, and snack ti",
     story:
-      "Built to feel familiar and comforting, while fitting naturally into breakfast and family routines.",
+      "Created from a scientist’s perspective on how everyday food shapes energy, mood, and long-term health — without making food feel restrictive or complicated.",
     tags: ["Family-friendly", "Everyday use", "Comfort food"],
     ways: ["Spread on toast", "Add to oats", "Use with pancakes"],
     ingredients: [
@@ -53,15 +53,15 @@ const products = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Coffee%20Reimagined.",
   },
   {
-    name: "GutLab healthy nut Mix",
+    name: "Nourish+ Cocoa & Nut Blend",
     price: "SGD 18",
     image: "/cocoa_mix.jpeg",
     tagline: "Premium cocoa drink for everyday energy.",
     description:
-      "A rich cocoa blend for warm drinks, smoothies, oats, and daily comfort moments.",
+      "A daily nourishment blend designed to support energy, focus, and gut health. Made with real cocoa, nuts, and grains",
     story:
-      "Positioned as the richer, more premium part of the range — something you keep coming back to morning or evening.",
-    tags: ["Premium blend", "Daily ritual", "Comforting"],
+      "Built on the understanding that what we consume daily shapes how we feel, think, and function.",
+    tags: ["Supports steady energy", "Comforting daily ritual", "No refined sugar or preservatives"],
     ways: ["Hot cocoa drink", "Blend into smoothies", "Stir into oats"],
     ingredients: [
       "Barley",
@@ -75,7 +75,7 @@ const products = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20Cocoa%20Nut%20Mix.",
   },
   {
-    name: "Fudge Brownie (500g)",
+    name: "Millet Healthy Brownie (500g)",
     price: "SGD 50",
     image: "/brownie_500.jpg",
     tagline: "Rich, fudgy, small-batch brownie.",
@@ -97,7 +97,7 @@ const products = [
       "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20500g%20Fudge%20Brownie.",
   },
   {
-    name: "Fudge Brownie (1100g)",
+    name: "Millet Healthy Brownie (1100g)",
     price: "SGD 110",
     image: "/brownie_1100.jpg",
     tagline: "Large indulgent brownie slab.",
@@ -755,7 +755,7 @@ export default function App() {
               </div>
               <div>
                 <div className="brand-title">Gut Lab by Xaels</div>
-                <div className="brand-sub">Joyful everyday nourishment</div>
+                <div className="brand-sub">A Healthier everyday breakfast, built on gut–brain science</div>
               </div>
             </div>
 
@@ -775,7 +775,7 @@ export default function App() {
               <div className="hero-box">
                 <div className="hero-content">
                   <div className="eyebrow">Signature Collection</div>
-                  <h1>Everyday food that quietly shapes how your family feels.</h1>
+                  <h1>Everyday food that shapes your family’s energy, mood, and wellbeing</h1>
                   <p className="hero-copy">
                     Built on the science of the gut–brain axis. Simple foods designed for better mornings, calmer days, and real family routines — without ultra-processed shortcuts.
                     
