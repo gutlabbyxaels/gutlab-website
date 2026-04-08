@@ -148,41 +148,78 @@ const products = [
   },
 ];
 
+const startHereProducts = [products[0], products[2]];
+
 const bundles = [
   {
-    title: "Starter Trio",
-    price: "SGD 35",
-    badge: "Best Value",
-    desc: "Any 3 products for SGD 35",
-    note: "Perfect first purchase to try the Gut Lab range.",
-    order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Starter%20Trio%20bundle%20for%20SGD%2035.",
-  },
-  {
-    title: "Spread Duo",
-    price: "SGD 18",
-    badge: "Daily Favorite",
-    desc: "Healthy Spread + Coffee Reimagined",
-    note: "Great for breakfast lovers and everyday toast routines.",
-    order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Spread%20Duo%20bundle%20for%20SGD%2018.",
-  },
-  {
-    title: "Nourish+ + Spread Set",
+    title: "Starter Pack",
     price: "SGD 27",
-    badge: "Premium Pick",
-    desc: "Nourish+ Cocoa & Nut Blend + Healthy Spread",
-    note: "A strong breakfast and snack pairing for everyday routines.",
+    badge: "Start Here",
+    desc: "Healthy Spread + Nourish+",
+    note: "Best first purchase to build a simple daily routine.",
+    saving: "Save more vs buying individually",
+    highlight: false,
     order:
-      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20order%20the%20Nourish%2B%20%2B%20Spread%20Set%20for%20SGD%2027.",
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20start%20with%20the%20Starter%20Pack%20for%20SGD%2027.",
+  },
+  {
+    title: "Everyday Essentials",
+    price: "SGD 35",
+    badge: "Most Chosen",
+    desc: "Any 3 products",
+    note: "Most customers choose this to try more and save.",
+    saving: "Most customers choose this",
+    highlight: true,
+    order:
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20start%20with%20the%20Everyday%20Essentials%20bundle%20for%20SGD%2035.",
+  },
+  {
+    title: "Family Pack",
+    price: "SGD 55",
+    badge: "Best Value",
+    desc: "Spread + Nourish+ + Brownie",
+    note: "Perfect for families, gifting, or stocking up.",
+    saving: "",
+    highlight: false,
+    order:
+      "https://wa.me/6584067441?text=Hi%20Gut%20Lab%20by%20Xaels%2C%20I%20would%20like%20to%20start%20with%20the%20Family%20Pack%20for%20SGD%2055.",
   },
 ];
 
+const reviews = [
+  {
+    name: "Aditi",
+    product: "Healthy Spread",
+    rating: 5,
+    text: "Healthy Spread is now part of our daily breakfast. It feels familiar, easy to use, and my family actually enjoys it.",
+  },
+  {
+    name: "Rahul",
+    product: "Nourish+",
+    rating: 5,
+    text: "Nourish+ feels like a comforting daily ritual. It’s one of the easiest ways we’ve added something better into our routine.",
+  },
+  {
+    name: "Meera",
+    product: "Veggie Unlocked",
+    rating: 5,
+    text: "My child actually enjoyed the capsicum spread, which says everything. Easy lunchbox addition and not complicated to use.",
+  },
+];
+
+function Stars({ rating }) {
+  return <span>{"★".repeat(rating)}{"☆".repeat(5 - rating)}</span>;
+}
+
 function ProductCard({ product }) {
+  const isMostOrdered = product.name === "Healthy Spread";
+
   return (
     <div className="card product-card">
       <img src={product.image} alt={product.name} className="product-image" />
       <div className="product-body">
+        {isMostOrdered && <div className="badge">Most Ordered</div>}
+
         <div className="product-head">
           <h3>{product.name}</h3>
           <span className="price-pill">{product.price}</span>
@@ -191,7 +228,7 @@ function ProductCard({ product }) {
         <p className="tagline">{product.tagline}</p>
         <p className="muted">{product.description}</p>
 
-        <details className="product-dropdown">
+        <details className="product-dropdown" open>
           <summary>Why it matters</summary>
           <div className="soft-box dropdown-box">
             <p>{product.story}</p>
@@ -262,6 +299,7 @@ export default function App() {
         .page {
           min-height: 100vh;
           overflow-x: hidden;
+          padding-bottom: 70px;
         }
 
         .container {
@@ -273,70 +311,79 @@ export default function App() {
         .header {
           position: sticky;
           top: 0;
-          z-index: 50;
-          background: rgba(255,255,255,0.88);
+          background: rgba(255,255,255,0.96);
           backdrop-filter: blur(10px);
-          border-bottom: 1px solid #efe1cf;
+          z-index: 100;
+          border-bottom: 1px solid #eee;
         }
 
         .header-inner {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          gap: 16px;
-          padding: 16px 0;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 14px 0;
         }
 
         .brand {
           display: flex;
           align-items: center;
           gap: 12px;
+          min-width: 0;
         }
 
-        .logo-box {
-          width: 58px;
-          height: 58px;
-          border-radius: 18px;
-          background: #fff;
-          overflow: hidden;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .logo-box img {
-          width: 100%;
-          height: 100%;
+        .brand-logo {
+          width: 48px;
+          height: 48px;
           object-fit: contain;
+          flex-shrink: 0;
         }
 
-        .brand-title {
-          font-size: 28px;
+        .brand-copy {
+          min-width: 0;
+        }
+
+        .brand-name {
           font-weight: 800;
-          line-height: 1.05;
+          font-size: 18px;
+          line-height: 1.1;
+          color: #21451f;
         }
 
-        .brand-sub {
-          font-size: 13px;
-          color: #666;
+        .brand-tagline {
+          font-size: 12px;
+          opacity: 0.7;
+          line-height: 1.35;
           margin-top: 3px;
+          color: #4f5a4d;
         }
 
         .nav {
           display: flex;
-          gap: 18px;
+          align-items: center;
+          gap: 14px;
           flex-wrap: wrap;
         }
 
         .nav a {
           color: #21451f;
-          font-weight: 700;
+          font-weight: 600;
+          opacity: 0.82;
           font-size: 15px;
         }
 
+        .order-btn {
+          background: #21451f;
+          color: white;
+          padding: 10px 16px;
+          border-radius: 999px;
+          font-weight: 700;
+          white-space: nowrap;
+          box-shadow: 0 10px 22px rgba(33,69,31,0.16);
+        }
+
         .hero {
-          padding: 44px 0 30px;
+          padding: 44px 0 24px;
         }
 
         .hero-box {
@@ -382,6 +429,23 @@ export default function App() {
           gap: 12px;
           flex-wrap: wrap;
           margin-top: 24px;
+        }
+
+        .trust-strip {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 20px;
+        }
+
+        .trust-strip div {
+          background: #fff;
+          padding: 8px 12px;
+          border-radius: 999px;
+          font-size: 13px;
+          font-weight: 700;
+          color: #21451f;
+          border: 1px solid #eee0c9;
         }
 
         .btn {
@@ -452,6 +516,17 @@ export default function App() {
           backdrop-filter: blur(8px);
         }
 
+        .badge {
+          background: #21451f;
+          color: white;
+          font-size: 12px;
+          padding: 6px 10px;
+          border-radius: 999px;
+          display: inline-block;
+          margin-bottom: 10px;
+          font-weight: 800;
+        }
+
         .products-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -516,7 +591,8 @@ export default function App() {
         .soft-box p,
         .story-panel p,
         .about-panel p,
-        .contact-copy p {
+        .contact-copy p,
+        .review-card p {
           color: #666;
           line-height: 1.72;
         }
@@ -527,13 +603,6 @@ export default function App() {
           border-radius: 18px;
           background: linear-gradient(135deg, #fff8ef 0%, #fff3e1 100%);
           border: 1px solid #f0dfc7;
-        }
-
-        .soft-box strong {
-          color: #21451f;
-          display: block;
-          margin-bottom: 6px;
-          font-size: 14px;
         }
 
         .tag-row {
@@ -600,7 +669,6 @@ export default function App() {
           margin-top: 0;
         }
 
-        .ingredients ul,
         .soft-box ul {
           margin: 10px 0 0 0;
           padding-left: 18px;
@@ -628,31 +696,41 @@ export default function App() {
           box-shadow: 0 18px 40px rgba(33,69,31,0.22);
         }
 
-        .bundle-eyebrow {
-          color: #f3d28a;
-          font-size: 12px;
+        .bundle-hook {
+          display: inline-block;
+          margin-bottom: 12px;
+          padding: 8px 12px;
+          border-radius: 999px;
+          background: rgba(255,255,255,0.12);
+          color: #ffe6ad;
           font-weight: 800;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
+          font-size: 12px;
         }
 
         .bundle-wrap h2 {
           margin: 12px 0 10px 0;
           font-size: 42px;
-          color: #000 !important;
+          color: #fff;
         }
 
-        .top-copy {
-          margin: 0 0 22px 0;
+        .bundle-sub {
+          margin: 0 0 10px 0;
           max-width: 760px;
           line-height: 1.7;
           color: #edf3eb;
+        }
+
+        .urgency {
+          margin-top: 10px;
+          font-weight: 700;
+          color: #f3d28a;
         }
 
         .bundle-grid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 18px;
+          margin-top: 24px;
         }
 
         .bundle-card {
@@ -662,18 +740,19 @@ export default function App() {
           border: 1px solid rgba(255,255,255,0.14);
         }
 
-        .bundle-badge {
-          display: inline-block;
-          background: rgba(255,255,255,0.12);
-          color: #ffe6ad;
+        .highlight {
+          background: #f3d28a;
+          color: #21451f;
           font-weight: 800;
-          font-size: 12px;
+          padding: 6px 10px;
           border-radius: 999px;
-          padding: 8px 12px;
+          display: inline-block;
+          margin-bottom: 10px;
+          font-size: 12px;
         }
 
         .bundle-card h3 {
-          margin: 16px 0 6px 0;
+          margin: 8px 0 6px 0;
           font-size: 28px;
         }
 
@@ -681,6 +760,7 @@ export default function App() {
           color: #f3d28a;
           font-weight: 900;
           font-size: 34px;
+          margin-top: 6px;
         }
 
         .bundle-desc {
@@ -695,6 +775,118 @@ export default function App() {
           color: #e6ece4;
           line-height: 1.6;
           font-size: 14px;
+        }
+
+        .bundle-saving {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #f3d28a;
+          font-weight: 700;
+        }
+
+        .reviews-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 14px;
+          margin-top: 20px;
+        }
+
+        .review-card {
+          background: #fff;
+          padding: 18px;
+          border-radius: 18px;
+          border: 1px solid #efe2d2;
+          box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+        }
+
+        .review-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 10px;
+        }
+
+        .review-name {
+          font-weight: 800;
+          color: #21451f;
+        }
+
+        .review-product {
+          font-size: 13px;
+          color: #9b6918;
+          font-weight: 700;
+        }
+
+        .review-stars {
+          color: #b6761e;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+
+        .review-form {
+          margin-top: 28px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background: #fff;
+          padding: 22px;
+          border-radius: 22px;
+          border: 1px solid #efe2d2;
+          box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+        }
+
+        .review-form h3 {
+          margin: 0 0 4px 0;
+          color: #21451f;
+        }
+
+        .review-form p {
+          margin: 0 0 8px 0;
+          color: #666;
+          line-height: 1.6;
+        }
+
+        .review-form input,
+        .review-form textarea,
+        .review-form select {
+          padding: 12px 14px;
+          border-radius: 12px;
+          border: 1px solid #e7d7c1;
+          font: inherit;
+          background: #fffdf9;
+        }
+
+        .review-form textarea {
+          min-height: 110px;
+          resize: vertical;
+        }
+
+        .review-form button {
+          border: 0;
+          cursor: pointer;
+        }
+
+        .routine-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          margin-top: 20px;
+        }
+
+        .routine-grid div {
+          background: #fff6ea;
+          padding: 14px;
+          border-radius: 14px;
+          font-weight: 700;
+          color: #21451f;
+          border: 1px solid #f0debf;
+        }
+
+        .refill {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #7a6c58;
         }
 
         .story-layout,
@@ -768,7 +960,36 @@ export default function App() {
           width: 100%;
         }
 
+        .sticky-cta {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #21451f;
+          padding: 14px;
+          text-align: center;
+          z-index: 120;
+          display: none;
+          box-shadow: 0 -8px 18px rgba(0,0,0,0.12);
+        }
+
+        .sticky-cta a {
+          color: white;
+          font-weight: 800;
+          font-size: 16px;
+        }
+
         @media (max-width: 1024px) {
+          .header-inner {
+            flex-wrap: wrap;
+          }
+
+          .nav {
+            order: 3;
+            width: 100%;
+            justify-content: center;
+          }
+
           .story-layout,
           .about-layout,
           .contact-layout {
@@ -786,13 +1007,34 @@ export default function App() {
           .header-inner {
             flex-direction: column;
             align-items: flex-start;
+            gap: 12px;
+          }
+
+          .brand {
+            align-items: center;
+          }
+
+          .nav {
+            width: 100%;
+            justify-content: space-between;
+            gap: 10px;
+          }
+
+          .nav a {
+            margin: 0;
+            font-size: 14px;
+          }
+
+          .order-btn {
+            display: none;
           }
 
           .hero-box,
           .story-panel,
           .about-panel,
           .bundle-wrap,
-          .contact-wrap {
+          .contact-wrap,
+          .review-form {
             padding: 24px;
           }
 
@@ -805,12 +1047,17 @@ export default function App() {
 
           .products-grid,
           .bundle-grid,
-          .about-values {
+          .about-values,
+          .routine-grid {
             grid-template-columns: 1fr;
           }
 
           .action-row {
             flex-direction: column;
+          }
+
+          .sticky-cta {
+            display: block;
           }
         }
       `}</style>
@@ -819,12 +1066,10 @@ export default function App() {
         <header className="header">
           <div className="container header-inner">
             <div className="brand">
-              <div className="logo-box">
-                <img src="/logo.png" alt="Gut Lab by Xaels logo" />
-              </div>
-              <div>
-                <div className="brand-title">Gut Lab by Xaels</div>
-                <div className="brand-sub">
+              <img src="/logo.png" alt="Gut Lab" className="brand-logo" />
+              <div className="brand-copy">
+                <div className="brand-name">Gut Lab by Xaels</div>
+                <div className="brand-tagline">
                   Healthier everyday food, built on gut–brain science
                 </div>
               </div>
@@ -837,6 +1082,10 @@ export default function App() {
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
             </nav>
+
+            <a href={WHATSAPP_ORDER_URL} className="order-btn">
+              Order Now
+            </a>
           </div>
         </header>
 
@@ -846,11 +1095,17 @@ export default function App() {
               <div className="hero-box">
                 <div className="hero-content">
                   <div className="eyebrow">Signature Collection</div>
-                  <h1>Everyday food that shapes your family’s energy, mood, and wellbeing</h1>
+                  <h1>
+                    Everyday food that shapes your family’s energy, mood, and wellbeing
+                  </h1>
                   <p className="hero-copy">
-                    Built on the science of the gut–brain axis. Simple foods designed for better mornings, calmer days, and real family routines — without ultra-processed shortcuts.
-                    <br /><br />
-                    No refined sugar. No preservatives. Made with thoughtful ingredients and designed for everyday use.
+                    Built on the science of the gut–brain axis. Simple foods designed
+                    for better mornings, calmer days, and real family routines —
+                    without ultra-processed shortcuts.
+                    <br />
+                    <br />
+                    No refined sugar. No preservatives. Made with thoughtful ingredients
+                    and designed for everyday use.
                   </p>
 
                   <div className="hero-buttons">
@@ -866,6 +1121,64 @@ export default function App() {
                       View combo offers
                     </a>
                   </div>
+
+                  <div className="trust-strip">
+                    <div>✔ No refined sugar</div>
+                    <div>✔ No preservatives</div>
+                    <div>✔ Built on gut–brain science</div>
+                    <div>✔ Made for daily family use</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="container">
+              <div className="section-eyebrow">Start Here</div>
+              <h2>New here? Start with these</h2>
+              <p className="section-copy">
+                The easiest way to begin: one familiar breakfast staple and one daily nourishment ritual.
+              </p>
+
+              <div className="products-grid">
+                {startHereProducts.map((product) => (
+                  <ProductCard key={`start-${product.name}`} product={product} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="bundles" className="section">
+            <div className="container">
+              <div className="bundle-wrap">
+                <div className="bundle-hook">Not sure what to pick? Start here.</div>
+                <h2>Most customers start with a bundle</h2>
+                <p className="bundle-sub">
+                  Better value. Easier decisions. Designed for real routines.
+                </p>
+                <p className="urgency">
+                  Most customers choose bundles — better value and easier to start.
+                </p>
+
+                <div className="bundle-grid">
+                  {bundles.map((bundle) => (
+                    <div key={bundle.title} className="bundle-card">
+                      <div className="highlight">
+                        {bundle.highlight ? "Most Popular" : bundle.badge}
+                      </div>
+                      <h3>{bundle.title}</h3>
+                      <div className="bundle-desc">{bundle.desc}</div>
+                      <div className="bundle-price">{bundle.price}</div>
+                      {bundle.saving && (
+                        <div className="bundle-saving">{bundle.saving}</div>
+                      )}
+                      <div className="bundle-note">{bundle.note}</div>
+                      <a href={bundle.order} className="btn btn-white">
+                        Start with this bundle
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -876,7 +1189,10 @@ export default function App() {
               <div className="section-eyebrow">Our Products</div>
               <h2>Familiar foods, reworked with better ingredients</h2>
               <p className="section-copy">
-                Everyday formats like spreads, nourishment blends, and brownies — designed to feel familiar, but made more thoughtfully for daily life.
+                Everyday formats like spreads, nourishment blends, savory products, and brownies — designed to feel familiar, but made more thoughtfully for daily life.
+              </p>
+              <p className="refill">
+                Most customers reorder every 2–3 weeks as part of their routine.
               </p>
 
               <div className="products-grid">
@@ -887,29 +1203,73 @@ export default function App() {
             </div>
           </section>
 
-          <section id="bundles" className="section">
+          <section className="section">
             <div className="container">
-              <div className="bundle-wrap">
-                <div className="bundle-eyebrow">Combo Offers</div>
-                <h2>Easy bundle choices for higher orders</h2>
-                <p className="top-copy">
-                  Designed for real buying behaviour — try more, save more, and come back again.
-                </p>
+              <div className="section-eyebrow">Daily Routine</div>
+              <h2>Built for everyday use, not occasional use</h2>
+              <p className="section-copy">
+                The goal is not perfection. The goal is repeatable daily use that fits naturally into real family routines.
+              </p>
 
-                <div className="bundle-grid">
-                  {bundles.map((bundle) => (
-                    <div key={bundle.title} className="bundle-card">
-                      <div className="bundle-badge">{bundle.badge}</div>
-                      <h3>{bundle.title}</h3>
-                      <div className="bundle-price">{bundle.price}</div>
-                      <div className="bundle-desc">{bundle.desc}</div>
-                      <div className="bundle-note">{bundle.note}</div>
-                      <a href={bundle.order} className="btn btn-white">
-                        Order this combo
-                      </a>
+              <div className="routine-grid">
+                <div>Morning → Healthy Spread or Nourish+</div>
+                <div>Breakfast → Healthy Spread</div>
+                <div>Midday → Coffee Reimagined</div>
+                <div>Evening → Nourish+</div>
+              </div>
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="container">
+              <div className="section-eyebrow">Customer Reviews</div>
+              <h2>What our customers say</h2>
+
+              <div className="reviews-grid">
+                {reviews.map((review) => (
+                  <div key={`${review.name}-${review.product}`} className="review-card">
+                    <div className="review-top">
+                      <div>
+                        <div className="review-name">{review.name}</div>
+                        <div className="review-product">{review.product}</div>
+                      </div>
+                      <div className="review-stars">
+                        <Stars rating={review.rating} />
+                      </div>
                     </div>
+                    <p>“{review.text}”</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="review-form">
+                <h3>Leave a review</h3>
+                <p>
+                  Share what worked for you. This form is ready in the design now, and can be connected to a live review system next.
+                </p>
+                <input placeholder="Your name" />
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Select product
+                  </option>
+                  {products.map((product) => (
+                    <option key={`option-${product.name}`}>{product.name}</option>
                   ))}
-                </div>
+                </select>
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Rating
+                  </option>
+                  <option>5 - Excellent</option>
+                  <option>4 - Very Good</option>
+                  <option>3 - Good</option>
+                  <option>2 - Fair</option>
+                  <option>1 - Poor</option>
+                </select>
+                <textarea placeholder="Tell us about your experience"></textarea>
+                <button className="btn btn-primary" type="button">
+                  Submit Review
+                </button>
               </div>
             </div>
           </section>
@@ -923,20 +1283,21 @@ export default function App() {
                 <div className="card story-panel">
                   <h3>Why Gut Lab by Xaels exists</h3>
                   <p>
-                    What we eat every day shapes how we feel — our energy, mood, focus, and even
-                    how we respond to stress.
+                    What we eat every day shapes how we feel — our energy, mood, focus,
+                    and even how we respond to stress.
                   </p>
                   <p>
-                    Gut Lab by Xaels is built on the science of the gut–brain axis — the connection
-                    between food, the microbiome, and how we function daily.
+                    Gut Lab by Xaels is built on the science of the gut–brain axis — the
+                    connection between food, the microbiome, and how we function daily.
                   </p>
                   <p>
-                    As scientists, we’ve studied this for years. But it became real when we started seeing
-                    these effects in our own lives — especially after becoming parents.
+                    As scientists, we’ve studied this for years. But it became real when we
+                    started seeing these effects in our own lives — especially after becoming
+                    parents.
                   </p>
                   <p>
-                    That’s when we realised: the biggest impact doesn’t come from occasional healthy choices.
-                    It comes from what we eat every single day.
+                    That’s when we realised: the biggest impact doesn’t come from occasional
+                    healthy choices. It comes from what we eat every single day.
                   </p>
                 </div>
 
@@ -946,15 +1307,16 @@ export default function App() {
                     We don’t create “health products.” We rethink everyday foods.
                   </p>
                   <p>
-                    Spreads, nourishment blends, savory products, and brownies — familiar formats that people already enjoy,
-                    redesigned with more thoughtful ingredients and long-term use in mind.
+                    Spreads, nourishment blends, savory products, and brownies — familiar
+                    formats that people already enjoy, redesigned with more thoughtful
+                    ingredients and long-term use in mind.
                   </p>
                   <p>
                     Because the best products are the ones you actually keep using.
                   </p>
                   <p>
-                    Our approach is simple: make food that families can trust, children can enjoy, and
-                    parents can feel good about buying again.
+                    Our approach is simple: make food that families can trust, children can
+                    enjoy, and parents can feel good about buying again.
                   </p>
                 </div>
               </div>
@@ -973,16 +1335,17 @@ export default function App() {
                     Gut Lab by Xaels started at the intersection of science and real life.
                   </p>
                   <p>
-                    We’ve spent years understanding the microbiome and gut–brain connection — but it
-                    was only after becoming parents that we started questioning everyday food more seriously.
+                    We’ve spent years understanding the microbiome and gut–brain connection —
+                    but it was only after becoming parents that we started questioning
+                    everyday food more seriously.
                   </p>
                   <p>
-                    The small things — mood, energy, irritability, focus — started to matter more.
-                    And we realised how much of it is influenced by what we eat daily.
+                    The small things — mood, energy, irritability, focus — started to matter
+                    more. And we realised how much of it is influenced by what we eat daily.
                   </p>
                   <p>
-                    That’s why we build products that are not just better — but practical, repeatable, and
-                    made for real family routines.
+                    That’s why we build products that are not just better — but practical,
+                    repeatable, and made for real family routines.
                   </p>
                 </div>
 
@@ -1008,8 +1371,8 @@ export default function App() {
                   <div className="contact-copy">
                     <h2>Start with one product. Build your routine from there.</h2>
                     <p>
-                      Try a single product, or start with a bundle.
-                      Gut Lab is designed to fit into your daily routine — not change it completely.
+                      Try a single product, or start with a bundle. Gut Lab is designed to
+                      fit into your daily routine — not change it completely.
                     </p>
                     <p className="contact-note">
                       For custom bundle requests or bulk gifting orders, message us directly on
@@ -1054,6 +1417,10 @@ export default function App() {
             </div>
           </section>
         </main>
+
+        <div className="sticky-cta">
+          <a href={ORDER_CALCULATOR_URL}>Order Now</a>
+        </div>
       </div>
     </>
   );
